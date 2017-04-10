@@ -19,10 +19,10 @@ class Player {
     
     let name: String
     let photo: UIImage?
-    var isPresent: Bool
-    // overall game time
-    // games played? Int
-    // current play time
+    var isPresent = false
+    var currentPlayTime = 0.0
+    var totalPlayTime = 0.0
+    var totalGameTime = 0.0
     var notes: String
     var position = Set<FieldPosition>()
     
@@ -31,7 +31,6 @@ class Player {
         self.photo = photo
         self.notes = notes
         self.position = position
-        self.isPresent = false
     }
     
 }
