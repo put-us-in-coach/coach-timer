@@ -71,7 +71,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PZJ-pq-rY6" id="jOq-5U-mcL">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="1686" y="124"/>
         </scene>
-        <!--Team RosterV Iew Controller-->
+        <!--Team Roster View Controller-->
         <scene sceneID="g3m-sl-VwT">
             <objects>
-                <viewController id="b16-w7-vcK" customClass="TeamRosterVIewController" sceneMemberID="viewController">
+                <viewController id="b16-w7-vcK" customClass="TeamRosterViewController" customModule="Coach_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mSm-ax-kkR"/>
                         <viewControllerLayoutGuide type="bottom" id="PnK-mV-Zo7"/>
@@ -108,7 +108,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZFk-0s-oj2" id="BV2-JH-NT1">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -124,6 +124,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="pjr-GR-kLm" id="VgF-Pj-3HW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hel-QT-c2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

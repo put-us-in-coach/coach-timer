@@ -11,7 +11,7 @@ import UIKit
 class PlayerViewCell: UITableViewCell {
 
     
-    var player: Player
+    var player: Player!
     
     override func awakeFromNib() {
         super.awakeFromNib()
