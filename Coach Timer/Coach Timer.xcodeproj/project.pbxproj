@@ -64,11 +64,11 @@
 		992AC4901E9BF0BA00073329 /* Coach Timer */ = {
 			isa = PBXGroup;
 			children = (
-				992AC4A61E9BF11C00073329 /* Support */,
 				992AC4A51E9BF10E00073329 /* Controller */,
 				992AC4A41E9BF0FF00073329 /* Views */,
 				992AC4A31E9BF0E900073329 /* Model */,
 				992AC49D1E9BF0BA00073329 /* Info.plist */,
+				992AC4A61E9BF11C00073329 /* Support */,
 			);
 			path = "Coach Timer";
 			sourceTree = "<group>";
@@ -354,6 +354,7 @@
 				992AC4A21E9BF0BA00073329 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
