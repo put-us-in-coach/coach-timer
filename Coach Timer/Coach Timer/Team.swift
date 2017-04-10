@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+class Team {
+    
+    var players: [Player]
+    var games: [Game]
+    var avgPlayTime = 0.0
+    var totalGameTime = 0.0
+    
+    init() {
+        self.players = []
+        self.games = []
+        
+    }
+    
+}

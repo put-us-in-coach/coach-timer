@@ -26,7 +26,7 @@ class Player {
     var notes: String
     var position = Set<FieldPosition>()
     
-    init(name:String, photo:UIImage? = nil, notes:String = "", position:Set<FieldPosition>=[]) {
+    init(name: String, photo: UIImage? = nil, notes: String = "", position: Set<FieldPosition>=[]) {
         self.name = name
         self.photo = photo
         self.notes = notes
