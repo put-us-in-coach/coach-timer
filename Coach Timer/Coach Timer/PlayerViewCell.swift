@@ -10,9 +10,12 @@ import UIKit
 
 class PlayerViewCell: UITableViewCell {
 
+    
+    var player: Player
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

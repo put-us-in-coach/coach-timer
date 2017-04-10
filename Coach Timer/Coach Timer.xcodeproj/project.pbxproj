@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		992AC4921E9BF0BA00073329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992AC4911E9BF0BA00073329 /* AppDelegate.swift */; };
-		992AC4941E9BF0BA00073329 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992AC4931E9BF0BA00073329 /* ViewController.swift */; };
 		992AC4971E9BF0BA00073329 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 992AC4951E9BF0BA00073329 /* Main.storyboard */; };
 		992AC4991E9BF0BA00073329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 992AC4981E9BF0BA00073329 /* Assets.xcassets */; };
 		992AC49C1E9BF0BA00073329 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 992AC49A1E9BF0BA00073329 /* LaunchScreen.storyboard */; };
@@ -19,12 +18,12 @@
 		992AC4B01E9BF7EA00073329 /* TeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 992AC4AE1E9BF7EA00073329 /* TeamTableViewCell.xib */; };
 		C0C36A9E1E9C32E60085DD43 /* PlayerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C36A9C1E9C32E50085DD43 /* PlayerViewCell.swift */; };
 		C0C36A9F1E9C32E60085DD43 /* PlayerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0C36A9D1E9C32E50085DD43 /* PlayerViewCell.xib */; };
+		C0C36AA11E9C44EA0085DD43 /* TeamRosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C36AA01E9C44EA0085DD43 /* TeamRosterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		992AC48E1E9BF0BA00073329 /* Coach Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coach Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		992AC4911E9BF0BA00073329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		992AC4931E9BF0BA00073329 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		992AC4961E9BF0BA00073329 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		992AC4981E9BF0BA00073329 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		992AC49B1E9BF0BA00073329 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		992AC4AE1E9BF7EA00073329 /* TeamTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamTableViewCell.xib; sourceTree = "<group>"; };
 		C0C36A9C1E9C32E50085DD43 /* PlayerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewCell.swift; sourceTree = "<group>"; };
 		C0C36A9D1E9C32E50085DD43 /* PlayerViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewCell.xib; sourceTree = "<group>"; };
+		C0C36AA01E9C44EA0085DD43 /* TeamRosterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamRosterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 		992AC4A51E9BF10E00073329 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				992AC4931E9BF0BA00073329 /* ViewController.swift */,
+				C0C36AA01E9C44EA0085DD43 /* TeamRosterViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -192,12 +192,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				992AC4941E9BF0BA00073329 /* ViewController.swift in Sources */,
 				992AC4A81E9BF1B200073329 /* Player.swift in Sources */,
 				992AC4921E9BF0BA00073329 /* AppDelegate.swift in Sources */,
 				992AC4AC1E9BF1E300073329 /* Team.swift in Sources */,
 				992AC4AF1E9BF7EA00073329 /* TeamTableViewCell.swift in Sources */,
 				992AC4AA1E9BF1D600073329 /* Game.swift in Sources */,
+				C0C36AA11E9C44EA0085DD43 /* TeamRosterViewController.swift in Sources */,
 				C0C36A9E1E9C32E60085DD43 /* PlayerViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
