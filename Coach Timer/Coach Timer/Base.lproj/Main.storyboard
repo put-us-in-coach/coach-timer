@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F54b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b16-w7-vcK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F54b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="coM-Qm-9D1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -87,7 +87,7 @@
             </objects>
             <point key="canvasLocation" x="1686" y="124"/>
         </scene>
-        <!--Team Roster View Controller-->
+        <!--Team Roster-->
         <scene sceneID="g3m-sl-VwT">
             <objects>
                 <viewController id="b16-w7-vcK" customClass="TeamRosterViewController" customModule="Coach_Timer" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,26 +121,25 @@
                                     <navigationItem title="Title" id="3AB-bO-NrD"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kif-ne-P44">
-                                <rect key="frame" x="124" y="339" width="126" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Player"/>
-                                <connections>
-                                    <segue destination="BKT-kM-wHQ" kind="presentation" id="jG5-GM-peM"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Team Roster" id="R4X-wg-Ipx">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="c0e-gc-6Yx">
+                            <connections>
+                                <segue destination="HAJ-ij-SDi" kind="presentation" identifier="AddItem" id="IMA-na-gyi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="pjr-GR-kLm" id="VgF-Pj-3HW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hel-QT-c2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2469.5999999999999" y="123.68815592203899"/>
+            <point key="canvasLocation" x="3408.8000000000002" y="123.68815592203899"/>
         </scene>
-        <!--New Player View Controller-->
+        <!--New Player-->
         <scene sceneID="glM-54-vOb">
             <objects>
                 <viewController id="BKT-kM-wHQ" customClass="NewPlayerViewController" customModule="Coach_Timer" customModuleProvider="target" sceneMemberID="viewController">
@@ -240,25 +239,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="defense"/>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXF-bt-hz8">
-                                <rect key="frame" x="16" y="459" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SAVE PLAYER"/>
-                                <connections>
-                                    <action selector="savePlayer:" destination="BKT-kM-wHQ" eventType="touchUpInside" id="3FS-ul-LJe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elZ-To-bgQ">
-                                <rect key="frame" x="16" y="522" width="343" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="CANCEL"/>
-                                <connections>
-                                    <action selector="cancelButton:" destination="BKT-kM-wHQ" eventType="touchUpInside" id="D0b-4Q-xTe"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="New Player" id="1pL-9c-5f2">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" systemItem="cancel" id="wa9-n2-h2q">
+                            <connections>
+                                <action selector="cancel:" destination="BKT-kM-wHQ" id="qvD-2n-xWb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Z3P-D1-KUY"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameField" destination="c1X-Em-QJd" id="wi1-Zy-xUS"/>
                         <outlet property="notesTextView" destination="r4x-gj-Dlz" id="MRX-DT-sLG"/>
@@ -271,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ijh-1m-IxG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2469.5999999999999" y="915.29235382308855"/>
+            <point key="canvasLocation" x="3408.8000000000002" y="915.29235382308855"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Vdi-dv-lq9">
@@ -336,7 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gxn-i2-WQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3217" y="124"/>
+            <point key="canvasLocation" x="4156" y="123.68815592203899"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="frY-5E-1qR">
@@ -355,6 +346,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFt-2i-iQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IyQ-Fj-yxT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="coM-Qm-9D1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ach-IX-J1F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="b16-w7-vcK" kind="relationship" relationship="rootViewController" id="IOO-1u-PR1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AdX-Dg-Ize" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2469.5999999999999" y="123.68815592203899"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KBW-FE-i8C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HAJ-ij-SDi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Twz-WP-IOs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BKT-kM-wHQ" kind="relationship" relationship="rootViewController" id="9GL-eG-9PK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dN5-bh-rO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2469.5999999999999" y="915.29235382308855"/>
         </scene>
     </scenes>
     <resources>

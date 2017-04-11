@@ -23,18 +23,9 @@ class NewPlayerViewController: UIViewController {
         
 
     }
+    @IBOutlet weak var savePlayer: UIBarButtonItem!
     
-    @IBAction func cancelButton(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-        
-    }
-    
-    @IBAction func savePlayer(_ sender: Any) {
-        
-        instantiatePlayer()
-//        savePlayerToRoster()
-       
-    }
+//MARK: Navigation
     
     func instantiatePlayer() {
         
@@ -66,7 +57,7 @@ class NewPlayerViewController: UIViewController {
         
         let currentPlayer = Player(name: nameField.text!, photo: playerView.image, notes: notesTextView.text, positions: tempPosition)
         
-//        TeamRosterViewController.tableView(
+        //        TeamRosterViewController.tableView(
         
         Team.shared.activeRoster.append(currentPlayer)
         print("\(Team.shared.activeRoster.last)")
@@ -75,6 +66,22 @@ class NewPlayerViewController: UIViewController {
         
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard let button = sender as? UIBarButtonItem, button === savePlayer else {
+            print("Save Button not pressed, Canceling!")
+            return
+        }
+    }
+//MARK: Action
+    @IBAction func cancel(_ sender: Any) {
+        
+    }
+    
+        instantiatePlayer()
+//        savePlayerToRoster()
+
+
     
 //    func savePlayerToRoster() {
 //        
