@@ -35,7 +35,14 @@ class TeamRosterViewController: UIViewController {
         
     }
 
-    
+    @IBAction func returnToRoster(sender: UIStoryboardSegue){
+        if let sourceViewController = sender.source as? NewPlayerViewController, let player = sourceViewController.currentPlayer {
+            let newIndexPath = IndexPath(row: roster.count, section: 0)
+            roster.append(player)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+        
+    }
 
     
 

@@ -10,24 +10,23 @@ import UIKit
 
 class NewPlayerViewController: UIViewController {
 
-   
+    var currentPlayer: Player?
+    
     @IBOutlet weak var nameField: UITextField!
-    
     @IBOutlet var positionForm: [UISwitch]!
-    
     @IBOutlet weak var playerView: UIImageView!
     @IBOutlet weak var notesTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
     }
-    @IBOutlet weak var savePlayer: UIBarButtonItem!
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
 //MARK: Navigation
     
-    func instantiatePlayer() {
+    func instantiatePlayer() -> Player {
         
         var tempPosition = [String: Bool]()
         
@@ -59,26 +58,27 @@ class NewPlayerViewController: UIViewController {
         
         //        TeamRosterViewController.tableView(
         
-        Team.shared.activeRoster.append(currentPlayer)
+//        Team.shared.activeRoster.append(currentPlayer)
         print("\(Team.shared.activeRoster.last)")
-        
-        self.dismiss(animated: true, completion: nil)
-        
-        
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        guard let button = sender as? UIBarButtonItem, button === savePlayer else {
-            print("Save Button not pressed, Canceling!")
-            return
-        }
-    }
-//MARK: Action
-    @IBAction func cancel(_ sender: Any) {
-        
+
+        return currentPlayer
     }
     
-        instantiatePlayer()
+    @IBAction func saveButton(_ sender: Any) {
+        currentPlayer = instantiatePlayer()
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    //MARK: Action
+    @IBAction func cancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    
+    
+    }
+}
+
+    
+    
 //        savePlayerToRoster()
 
 
@@ -90,7 +90,7 @@ class NewPlayerViewController: UIViewController {
     
     
 
-}
+
 
 extension NewPlayerViewController: UITextFieldDelegate {
     
