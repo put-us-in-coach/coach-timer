@@ -24,6 +24,11 @@ class NewPlayerViewController: UIViewController {
 
     }
     
+    @IBAction func cancelButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
     @IBAction func savePlayer(_ sender: Any) {
         
         instantiatePlayer()
@@ -61,6 +66,7 @@ class NewPlayerViewController: UIViewController {
         
         let currentPlayer = Player(name: nameField.text!, photo: playerView.image, notes: notesTextView.text, positions: tempPosition)
         
+//        TeamRosterViewController.tableView(
         
         Team.shared.activeRoster.append(currentPlayer)
         print("\(Team.shared.activeRoster.last)")

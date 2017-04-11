@@ -10,9 +10,16 @@ import UIKit
 
 class TeamRosterViewController: UIViewController {
 
-    var roster = [Player?]()
-    
     @IBOutlet weak var tableView: UITableView!
+    
+    var roster = Team.shared.activeRoster{
+        
+        didSet {
+            tableView.reloadData()
+            
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +47,7 @@ extension TeamRosterViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerViewCell", for: indexPath) as! PlayerViewCell
         
-        cell.player = self.roster[indexPath.row]!
+        cell.player = self.roster[indexPath.row]
         
         return cell
     }
