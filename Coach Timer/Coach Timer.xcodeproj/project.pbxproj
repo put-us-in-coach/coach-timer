@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		622CA4C01E9C59870081C011 /* NewPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622CA4BF1E9C59870081C011 /* NewPlayerViewController.swift */; };
 		992AC4921E9BF0BA00073329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992AC4911E9BF0BA00073329 /* AppDelegate.swift */; };
 		992AC4971E9BF0BA00073329 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 992AC4951E9BF0BA00073329 /* Main.storyboard */; };
 		992AC4991E9BF0BA00073329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 992AC4981E9BF0BA00073329 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		622CA4BF1E9C59870081C011 /* NewPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlayerViewController.swift; sourceTree = "<group>"; };
 		992AC48E1E9BF0BA00073329 /* Coach Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coach Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		992AC4911E9BF0BA00073329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		992AC4961E9BF0BA00073329 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		992AC4A51E9BF10E00073329 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				622CA4BF1E9C59870081C011 /* NewPlayerViewController.swift */,
 				C0C36AA01E9C44EA0085DD43 /* TeamRosterViewController.swift */,
 			);
 			name = Controller;
@@ -198,6 +201,7 @@
 				992AC4AF1E9BF7EA00073329 /* TeamTableViewCell.swift in Sources */,
 				992AC4AA1E9BF1D600073329 /* Game.swift in Sources */,
 				C0C36AA11E9C44EA0085DD43 /* TeamRosterViewController.swift in Sources */,
+				622CA4C01E9C59870081C011 /* NewPlayerViewController.swift in Sources */,
 				C0C36A9E1E9C32E60085DD43 /* PlayerViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
