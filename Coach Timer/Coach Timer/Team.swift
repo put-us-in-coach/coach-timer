@@ -10,6 +10,9 @@ import Foundation
 
 class Team {
     
+    static var shared = Team()
+    
+    var activeRoster: [Player]
     var players: [Player]
     var games: [Game]
     var avgPlayTime = 0.0
@@ -18,7 +21,7 @@ class Team {
     init() {
         self.players = []
         self.games = []
-        
+        self.activeRoster = []
     }
     
 }

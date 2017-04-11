@@ -8,13 +8,6 @@
 
 import UIKit
 
-enum FieldPosition {
-    case goalie
-    case defense
-    case forward
-    case midfield
-}
-
 class Player {
     
     let name: String
@@ -24,13 +17,14 @@ class Player {
     var totalPlayTime = 0.0
     var totalGameTime = 0.0
     var notes: String
-    var position = Set<FieldPosition>()
+    var positions: [String: Bool] = ["Goalie": false, "Defense": false, "Midfield": false, "Center": false]
     
-    init(name: String, photo: UIImage? = nil, notes: String = "", position: Set<FieldPosition>=[]) {
+    init(name: String, photo: UIImage? = nil, notes: String = "",
+         positions: [String: Bool] ) {
         self.name = name
         self.photo = photo
         self.notes = notes
-        self.position = position
+        self.positions = positions
     }
     
 }
