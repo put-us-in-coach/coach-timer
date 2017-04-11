@@ -56,9 +56,8 @@ class NewPlayerViewController: UIViewController {
         
         let currentPlayer = Player(name: nameField.text!, photo: playerView.image, notes: notesTextView.text, positions: tempPosition)
         
-        //        TeamRosterViewController.tableView(
         
-//        Team.shared.activeRoster.append(currentPlayer)
+        Team.shared.activeRoster.append(currentPlayer)
         print("\(Team.shared.activeRoster.last)")
 
         return currentPlayer

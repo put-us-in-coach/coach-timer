@@ -11,15 +11,7 @@ import UIKit
 class TeamRosterViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
-    var roster = Team.shared.activeRoster{
-        
-        didSet {
-            tableView.reloadData()
-            
-        }
-    }
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,15 +27,10 @@ class TeamRosterViewController: UIViewController {
         
     }
 
-    @IBAction func returnToRoster(sender: UIStoryboardSegue){
-        if let sourceViewController = sender.source as? NewPlayerViewController, let player = sourceViewController.currentPlayer {
-            let newIndexPath = IndexPath(row: roster.count, section: 0)
-            roster.append(player)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
-        }
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
     }
-
     
 
 }
@@ -54,7 +41,7 @@ extension TeamRosterViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerViewCell", for: indexPath) as! PlayerViewCell
         
-        cell.player = self.roster[indexPath.row]
+        cell.player = Team.shared.activeRoster[indexPath.row]
         
         return cell
     }
@@ -67,7 +54,7 @@ extension TeamRosterViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return roster.count
+        return Team.shared.activeRoster.count
     }
     
     
