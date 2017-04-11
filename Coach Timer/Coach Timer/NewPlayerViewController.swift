@@ -10,9 +10,11 @@ import UIKit
 
 class NewPlayerViewController: UIViewController {
 
-    @IBOutlet weak var newPlayerView: UIView!
-    
     @IBOutlet weak var nameField: UITextField!
+    
+    @IBOutlet weak var playerImage: UIImageView!
+    
+  
     
     
     
