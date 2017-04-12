@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bH0-5k-Dec">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F54b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bH0-5k-Dec">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -71,7 +72,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PZJ-pq-rY6" id="jOq-5U-mcL">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -108,7 +109,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZFk-0s-oj2" id="BV2-JH-NT1">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -280,12 +281,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWG-j7-9az">
+                                <rect key="frame" x="144" y="21" width="87" height="87"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gWG-j7-9az" secondAttribute="height" multiplier="1:1" id="OT9-rv-jMu"/>
+                                    <constraint firstAttribute="width" constant="87" id="fjN-sd-dmQ"/>
+                                </constraints>
+                                <state key="normal" title="BUTTON" image="stopWatch"/>
+                                <connections>
+                                    <action selector="stopWatch:" destination="bH0-5k-Dec" eventType="touchUpInside" id="adn-l2-fL5"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5t2-P2-7HF">
                                 <rect key="frame" x="0.0" y="20" width="375" height="563"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UgI-1f-32n">
-                                <rect key="frame" x="0.0" y="110" width="375" height="451"/>
+                                <rect key="frame" x="0.0" y="109" width="375" height="452"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5UG-Zd-wJe">
                                     <size key="itemSize" width="67" height="67"/>
@@ -559,16 +571,28 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIMER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGE-uj-Bo0">
+                                <rect key="frame" x="158" y="54" width="58" height="25"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="0jS-WN-Yjq" secondAttribute="trailing" id="0tg-Rg-sWh"/>
+                            <constraint firstItem="PGE-uj-Bo0" firstAttribute="top" secondItem="gWG-j7-9az" secondAttribute="bottom" constant="-54" id="6ID-sE-p29"/>
+                            <constraint firstItem="PGE-uj-Bo0" firstAttribute="centerY" secondItem="gWG-j7-9az" secondAttribute="centerY" constant="2" id="A3j-4Z-ivf"/>
                             <constraint firstItem="UgI-1f-32n" firstAttribute="leading" secondItem="k0i-6P-fH2" secondAttribute="leading" id="DT6-Z4-8SW"/>
-                            <constraint firstItem="UgI-1f-32n" firstAttribute="top" secondItem="qXz-US-tWP" secondAttribute="bottom" constant="90" id="Mcz-u0-ko5"/>
+                            <constraint firstItem="gWG-j7-9az" firstAttribute="top" secondItem="qXz-US-tWP" secondAttribute="bottom" constant="1" id="LmN-YT-TpT"/>
+                            <constraint firstItem="UgI-1f-32n" firstAttribute="top" secondItem="gWG-j7-9az" secondAttribute="bottom" constant="1" id="Rh0-CU-WpP"/>
                             <constraint firstItem="0jS-WN-Yjq" firstAttribute="leading" secondItem="k0i-6P-fH2" secondAttribute="leading" id="a1I-yY-8qs"/>
+                            <constraint firstItem="gWG-j7-9az" firstAttribute="leading" secondItem="PGE-uj-Bo0" secondAttribute="trailing" constant="-72" id="i2p-XJ-t3D"/>
                             <constraint firstItem="ta2-hX-Gv4" firstAttribute="top" secondItem="0jS-WN-Yjq" secondAttribute="bottom" constant="84" id="iZC-2O-H9Y"/>
                             <constraint firstItem="0jS-WN-Yjq" firstAttribute="top" secondItem="UgI-1f-32n" secondAttribute="bottom" constant="22" id="lU5-uc-a5j"/>
                             <constraint firstItem="ta2-hX-Gv4" firstAttribute="top" secondItem="0jS-WN-Yjq" secondAttribute="bottom" constant="84" id="mej-1B-OgA"/>
+                            <constraint firstItem="gWG-j7-9az" firstAttribute="centerX" secondItem="k0i-6P-fH2" secondAttribute="centerX" id="ubs-52-WIT"/>
                             <constraint firstAttribute="trailing" secondItem="UgI-1f-32n" secondAttribute="trailing" id="ufV-zL-Hfb"/>
                         </constraints>
                     </view>
@@ -585,7 +609,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oej-5K-m3M" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JkH-bB-Vgf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="JkH-bB-Vgf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -603,7 +627,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="coM-Qm-9D1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ach-IX-J1F">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ach-IX-J1F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -637,5 +661,6 @@
     </scenes>
     <resources>
         <image name="defaultPlayerImage" width="100" height="100"/>
+        <image name="stopWatch" width="100" height="100"/>
     </resources>
 </document>

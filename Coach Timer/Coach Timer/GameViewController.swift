@@ -9,6 +9,13 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    
+    var timerIsOn = false
+    var game = Game()
+    var startTime = CFAbsoluteTime(0.0)
+    var endTime = CFAbsoluteTime(0.0)
+    
+
 
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -27,9 +34,27 @@ class GameViewController: UIViewController {
         collectionView.reloadData()
     }
     
+    @IBAction func stopWatch(_ sender: Any) {
+        
+        
+        print("buttonpressed")
+        
+        switch timerIsOn {
+        case true:
+            endTime = CFAbsoluteTimeGetCurrent()
+            let duration = endTime - startTime
+            game.totalGameTime += duration
+            timerIsOn = false
+            print(duration)
+            
+        case false:
+            startTime = CFAbsoluteTimeGetCurrent()
+            timerIsOn = true
+        }
+    }
 }
-    
-    
+
+
 extension GameViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
