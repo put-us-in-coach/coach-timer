@@ -17,6 +17,8 @@
 		992AC4AC1E9BF1E300073329 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992AC4AB1E9BF1E300073329 /* Team.swift */; };
 		992AC4AF1E9BF7EA00073329 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992AC4AD1E9BF7EA00073329 /* TeamTableViewCell.swift */; };
 		992AC4B01E9BF7EA00073329 /* TeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 992AC4AE1E9BF7EA00073329 /* TeamTableViewCell.xib */; };
+		C052DE951E9DD713003E65AC /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C052DE941E9DD713003E65AC /* GameViewController.swift */; };
+		C052DE971E9DE19B003E65AC /* PlayersGridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C052DE961E9DE19B003E65AC /* PlayersGridFlowLayout.swift */; };
 		C0C36A9E1E9C32E60085DD43 /* PlayerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C36A9C1E9C32E50085DD43 /* PlayerViewCell.swift */; };
 		C0C36A9F1E9C32E60085DD43 /* PlayerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0C36A9D1E9C32E50085DD43 /* PlayerViewCell.xib */; };
 		C0C36AA11E9C44EA0085DD43 /* TeamRosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C36AA01E9C44EA0085DD43 /* TeamRosterViewController.swift */; };
@@ -35,6 +37,8 @@
 		992AC4AB1E9BF1E300073329 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		992AC4AD1E9BF7EA00073329 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		992AC4AE1E9BF7EA00073329 /* TeamTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamTableViewCell.xib; sourceTree = "<group>"; };
+		C052DE941E9DD713003E65AC /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		C052DE961E9DE19B003E65AC /* PlayersGridFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersGridFlowLayout.swift; sourceTree = "<group>"; };
 		C0C36A9C1E9C32E50085DD43 /* PlayerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewCell.swift; sourceTree = "<group>"; };
 		C0C36A9D1E9C32E50085DD43 /* PlayerViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewCell.xib; sourceTree = "<group>"; };
 		C0C36AA01E9C44EA0085DD43 /* TeamRosterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamRosterViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 			children = (
 				622CA4BF1E9C59870081C011 /* NewPlayerViewController.swift */,
 				C0C36AA01E9C44EA0085DD43 /* TeamRosterViewController.swift */,
+				C052DE941E9DD713003E65AC /* GameViewController.swift */,
+				C052DE961E9DE19B003E65AC /* PlayersGridFlowLayout.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -197,8 +203,10 @@
 			files = (
 				992AC4A81E9BF1B200073329 /* Player.swift in Sources */,
 				992AC4921E9BF0BA00073329 /* AppDelegate.swift in Sources */,
+				C052DE971E9DE19B003E65AC /* PlayersGridFlowLayout.swift in Sources */,
 				992AC4AC1E9BF1E300073329 /* Team.swift in Sources */,
 				992AC4AF1E9BF7EA00073329 /* TeamTableViewCell.swift in Sources */,
+				C052DE951E9DD713003E65AC /* GameViewController.swift in Sources */,
 				992AC4AA1E9BF1D600073329 /* Game.swift in Sources */,
 				C0C36AA11E9C44EA0085DD43 /* TeamRosterViewController.swift in Sources */,
 				622CA4C01E9C59870081C011 /* NewPlayerViewController.swift in Sources */,

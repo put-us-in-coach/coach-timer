@@ -10,26 +10,54 @@ import UIKit
 
 class GameViewController: UIViewController {
 
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    
+//extension GameViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    //        setupDatasource()
+//        setupInitialLayout()
+        
     }
-    */
-
-}
+    
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        
+//        
+//    }
+    
+    
+//    struct itemsToDisplay {
+//    
+//    }
+//    
+//    struct ImageToDisplay {
+//        
+//    }
+//    
+//    func setupDatasource() {
+//        itemsToDisplay = [ImageToDisplay(imageName: "1"), ImageToDisplay(imageName: "2"), ImageToDisplay(imageName: "3"), ImageToDisplay(imageName: "4"),
+//                          ImageToDisplay(imageName: "5"), ImageToDisplay(imageName: "6"), ImageToDisplay(imageName: "7"), ImageToDisplay(imageName: "8"),
+//                          ImageToDisplay(imageName: "9"), ImageToDisplay(imageName: "10")]
+//        
+//        collectionView.reloadData()
+//    }
+//    
+//    func setupInitialLayout() {
+//        isGridFlowLayoutUsed = true
+//        self.collectionView.setCollectionViewLayout(PlayersGridFlowLayout, animated: true)
+//    
+//    }
+   
+//}

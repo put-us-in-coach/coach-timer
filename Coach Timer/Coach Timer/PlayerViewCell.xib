@@ -68,6 +68,12 @@
                     <constraint firstAttribute="trailingMargin" secondItem="RdZ-Ny-rYC" secondAttribute="trailing" constant="0.5" id="qpP-3I-9Gx"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="avgPlayTime" destination="RdZ-Ny-rYC" id="NHz-Md-cf1"/>
+                <outlet property="currentPlayTime" destination="oxd-HB-ju8" id="6tQ-tm-DyG"/>
+                <outlet property="isPresent" destination="jPr-2f-S0Y" id="41R-TD-xDf"/>
+                <outlet property="nameLabel" destination="wXH-lr-CjN" id="Ks1-Ee-3H0"/>
+            </connections>
             <point key="canvasLocation" x="64.5" y="11"/>
         </tableViewCell>
     </objects>
