@@ -10,8 +10,14 @@ import UIKit
 
 class GameViewController: UIViewController {
 
-    
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var rosterCollectionView: UICollectionView!
+    
+    
+    
+    var activePlayer = [Player]()
+    
+    var activeRoster = Team.shared.activeRoster
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,29 +39,47 @@ class GameViewController: UIViewController {
 extension GameViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Team.shared.activeRoster.count
+        return activeRoster.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        
-        if let view = cell as? activePlayerCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "activePlayerCell", for: indexPath) as! activePlayerCell
             
-            view.imageView.image = Team.shared.activeRoster[indexPath.row].photo
-        }
+        cell.imageView.image = activeRoster[indexPath.row].photo
+        cell.name.text = activeRoster[indexPath.row].name
+        
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let alert = UIAlertController(title: "didSelectItemAtIndexPath:", message: "Indexpath = \(indexPath)", preferredStyle: .alert)
+        
+        let alertAction = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
+        alert.addAction(alertAction)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
     
-
+    
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        
+        
+    }
+    
+    
    
 }
 
 extension GameViewController: UICollectionViewDelegateFlowLayout {
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: collectionView.frame.size.width/3.0 - 8, height: collectionView.frame.size.width/3.0 - 8)
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        
+        return CGSize(width: collectionView.frame.size.width/3.0 - 8, height: collectionView.frame.size.width/3.0 - 8)
+    }
     
 }
