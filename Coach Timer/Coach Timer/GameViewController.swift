@@ -20,8 +20,7 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
     
-    
-    
+    @IBOutlet weak var rosterCollectionView: UICollectionView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -29,10 +28,14 @@ class GameViewController: UIViewController {
         print("Not Crashing")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        self.rosterCollectionView.delegate = self
+        self.rosterCollectionView.dataSource = self
         
-        let playaNib = UINib(nibName: "activePlayerCell", bundle: nil)
-        self.collectionView.register(playaNib, forCellWithReuseIdentifier: "activePlayerCell")
+        let playaNib = UINib(nibName: "ActivePlayerCollectionCell", bundle: nil)
+        self.collectionView.register(playaNib, forCellWithReuseIdentifier: "ActivePlayerCollectionCell")
+        self.rosterCollectionView.register(playaNib, forCellWithReuseIdentifier: "ActivePlayerCollectionCell")
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -74,14 +77,12 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivePlayerCollectionCell", for: indexPath) as! ActivePlayerCollectionCell
         
-        if let view = cell as? activePlayerCell {
-            
-            view.imageView.image = Team.shared.activeRoster[indexPath.row].photo
-        }
+        cell.imageView.image = Team.shared.activeRoster[indexPath.row].photo
+        
         return cell
     }
-
+    
 }
-  
+
