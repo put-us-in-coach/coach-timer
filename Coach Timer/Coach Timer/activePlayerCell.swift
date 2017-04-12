@@ -10,6 +10,7 @@ import UIKit
 
 class activePlayerCell: UICollectionViewCell {
 
+    @IBOutlet weak var timerLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
