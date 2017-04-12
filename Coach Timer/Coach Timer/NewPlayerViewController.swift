@@ -58,7 +58,7 @@ class NewPlayerViewController: UIViewController {
         
         
         Team.shared.activeRoster.append(currentPlayer)
-        print("\(Team.shared.activeRoster.last)")
+        print("\(String(describing: Team.shared.activeRoster.last))")
 
         return currentPlayer
     }

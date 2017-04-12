@@ -27,8 +27,8 @@
                             <constraint firstAttribute="height" constant="64" id="usZ-OO-jt5"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXH-lr-CjN">
-                        <rect key="frame" x="89" y="7" width="284" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXH-lr-CjN">
+                        <rect key="frame" x="89" y="7" width="45" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -39,8 +39,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="isPresent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPr-2f-S0Y">
-                        <rect key="frame" x="89" y="50" width="284" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="isPresent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPr-2f-S0Y">
+                        <rect key="frame" x="89" y="50" width="71.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -68,6 +68,12 @@
                     <constraint firstAttribute="trailingMargin" secondItem="RdZ-Ny-rYC" secondAttribute="trailing" constant="0.5" id="qpP-3I-9Gx"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="avgPlayTime" destination="RdZ-Ny-rYC" id="NHz-Md-cf1"/>
+                <outlet property="currentPlayTime" destination="oxd-HB-ju8" id="6tQ-tm-DyG"/>
+                <outlet property="isPresent" destination="jPr-2f-S0Y" id="41R-TD-xDf"/>
+                <outlet property="nameLabel" destination="wXH-lr-CjN" id="Ks1-Ee-3H0"/>
+            </connections>
             <point key="canvasLocation" x="64.5" y="11"/>
         </tableViewCell>
     </objects>
