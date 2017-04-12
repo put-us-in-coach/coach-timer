@@ -10,18 +10,23 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    var timerIsOn = false
+    var seconds = 0
+    var minutes = 0
     var game = Game()
-    var startTime = CFAbsoluteTime(0.0)
-    var endTime = CFAbsoluteTime(0.0)
+    var isTimerRunning = false
+    var resumeTapped = false
     
-
-
+    var timer = Timer()
+    
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Not Crashing")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
@@ -35,28 +40,34 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func stopWatch(_ sender: Any) {
-        
-        
-        print("buttonpressed")
-        
-        switch timerIsOn {
-        case true:
-            endTime = CFAbsoluteTimeGetCurrent()
-            let duration = endTime - startTime
-            game.totalGameTime += duration
-            timerIsOn = false
-            print(duration)
-            
-        case false:
-            startTime = CFAbsoluteTimeGetCurrent()
-            timerIsOn = true
+        startTimer()
+    }
+    
+    func startTimer() {
+        if isTimerRunning {
+            // Pause timer
+            timer.invalidate()
+            isTimerRunning = false
+        } else {
+            // Resume timer
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
+            isTimerRunning = true
         }
+    }
+    
+    
+    func updateTimer() {
+        seconds += 1
+        if seconds > 60 {
+            minutes += 1
+            seconds = 0
+        }
+        let s = String(format: "%02d:%02d", Int(minutes%100), Int(seconds%100))
+        self.timerLabel.text = "\(s)"
     }
 }
 
-
-extension GameViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
+extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Team.shared.activeRoster.count
     }
@@ -71,16 +82,6 @@ extension GameViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
         return cell
     }
-    
-    
 
-   
 }
-
-extension GameViewController: UICollectionViewDelegateFlowLayout {
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: collectionView.frame.size.width/3.0 - 8, height: collectionView.frame.size.width/3.0 - 8)
-//    }
-    
-}
+  

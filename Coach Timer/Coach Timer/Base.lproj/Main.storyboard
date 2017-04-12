@@ -572,24 +572,26 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIMER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGE-uj-Bo0">
-                                <rect key="frame" x="158" y="54" width="58" height="25"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="162" y="54" width="51" height="20"/>
+                                <color key="backgroundColor" red="0.15613976120948792" green="0.15314874053001404" blue="0.15305063128471375" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="51" id="aax-JP-WT5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
+                                <color key="highlightedColor" red="0.24703386425971985" green="0.24707478284835815" blue="0.24702483415603638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="0jS-WN-Yjq" secondAttribute="trailing" id="0tg-Rg-sWh"/>
-                            <constraint firstItem="PGE-uj-Bo0" firstAttribute="top" secondItem="gWG-j7-9az" secondAttribute="bottom" constant="-54" id="6ID-sE-p29"/>
-                            <constraint firstItem="PGE-uj-Bo0" firstAttribute="centerY" secondItem="gWG-j7-9az" secondAttribute="centerY" constant="2" id="A3j-4Z-ivf"/>
+                            <constraint firstItem="gWG-j7-9az" firstAttribute="top" secondItem="PGE-uj-Bo0" secondAttribute="bottom" constant="-53" id="CDW-n9-zHv"/>
                             <constraint firstItem="UgI-1f-32n" firstAttribute="leading" secondItem="k0i-6P-fH2" secondAttribute="leading" id="DT6-Z4-8SW"/>
                             <constraint firstItem="gWG-j7-9az" firstAttribute="top" secondItem="qXz-US-tWP" secondAttribute="bottom" constant="1" id="LmN-YT-TpT"/>
                             <constraint firstItem="UgI-1f-32n" firstAttribute="top" secondItem="gWG-j7-9az" secondAttribute="bottom" constant="1" id="Rh0-CU-WpP"/>
                             <constraint firstItem="0jS-WN-Yjq" firstAttribute="leading" secondItem="k0i-6P-fH2" secondAttribute="leading" id="a1I-yY-8qs"/>
-                            <constraint firstItem="gWG-j7-9az" firstAttribute="leading" secondItem="PGE-uj-Bo0" secondAttribute="trailing" constant="-72" id="i2p-XJ-t3D"/>
                             <constraint firstItem="ta2-hX-Gv4" firstAttribute="top" secondItem="0jS-WN-Yjq" secondAttribute="bottom" constant="84" id="iZC-2O-H9Y"/>
+                            <constraint firstItem="gWG-j7-9az" firstAttribute="leading" secondItem="PGE-uj-Bo0" secondAttribute="trailing" constant="-69" id="jba-it-P0b"/>
                             <constraint firstItem="0jS-WN-Yjq" firstAttribute="top" secondItem="UgI-1f-32n" secondAttribute="bottom" constant="22" id="lU5-uc-a5j"/>
                             <constraint firstItem="ta2-hX-Gv4" firstAttribute="top" secondItem="0jS-WN-Yjq" secondAttribute="bottom" constant="84" id="mej-1B-OgA"/>
                             <constraint firstItem="gWG-j7-9az" firstAttribute="centerX" secondItem="k0i-6P-fH2" secondAttribute="centerX" id="ubs-52-WIT"/>
@@ -598,6 +600,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="UgI-1f-32n" id="IgR-4j-pg3"/>
+                        <outlet property="timerLabel" destination="PGE-uj-Bo0" id="QpE-wk-N7m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gxn-i2-WQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -609,7 +612,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oej-5K-m3M" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="JkH-bB-Vgf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JkH-bB-Vgf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -627,7 +630,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="coM-Qm-9D1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ach-IX-J1F">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ach-IX-J1F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -661,6 +664,6 @@
     </scenes>
     <resources>
         <image name="defaultPlayerImage" width="100" height="100"/>
-        <image name="stopWatch" width="100" height="100"/>
+        <image name="stopWatch" width="150" height="150"/>
     </resources>
 </document>
