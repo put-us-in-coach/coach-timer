@@ -10,7 +10,6 @@ import Foundation
 
 class Game {
     
-    var activePlayers = [Player]()
     var activeRoster = [Player]()
     var totalGameTime = 0.0
     var positions: [String: Player?]

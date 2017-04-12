@@ -10,38 +10,27 @@ import UIKit
 
 class activePlayerCell: UICollectionViewCell {
 
-    var player: Player {
-        didSet {
-            self.name.text = player.name
-            self.imageView.image = player.photo
-        }
-    }
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
     
+ @IBOutlet weak var imageView: UIImageView!
     
-    
-    
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        
-//        self.translatesAutoresizingMaskIntoConstraints = false
-//        self.imageView.translatesAutoresizingMaskIntoConstraints = false
-//        
-//        self.addSubview(self.imageView)
-//        
-//        self.addConstraint(NSLayoutConstraint(item: self.imageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0))
-//        self.addConstraint(NSLayoutConstraint(item: self.imageView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0))
-//        self.addConstraint(NSLayoutConstraint(item: self.imageView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0))
-//        self.addConstraint(NSLayoutConstraint(item: self.imageView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0))
-//    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addSubview(self.imageView)
+        
+        self.addConstraint(NSLayoutConstraint(item: self.imageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.imageView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.imageView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.imageView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0))
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
