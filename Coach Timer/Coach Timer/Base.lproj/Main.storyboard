@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bH0-5k-Dec">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="coM-Qm-9D1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -151,10 +151,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPlayerImage" translatesAutoresizingMaskIntoConstraints="NO" id="M7C-tg-hRj">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPlayerImage" translatesAutoresizingMaskIntoConstraints="NO" id="M7C-tg-hRj">
                                 <rect key="frame" x="145" y="234" width="96" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="q9g-tV-hSY" appends="YES" id="veX-Ey-KWZ"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llu-dq-QvH">
                                 <rect key="frame" x="22" y="77" width="56" height="21"/>
@@ -257,7 +260,7 @@
                     <connections>
                         <outlet property="nameField" destination="c1X-Em-QJd" id="wi1-Zy-xUS"/>
                         <outlet property="notesTextView" destination="r4x-gj-Dlz" id="MRX-DT-sLG"/>
-                        <outlet property="playerView" destination="M7C-tg-hRj" id="9yU-8X-xgk"/>
+                        <outlet property="playerImageView" destination="M7C-tg-hRj" id="mry-gj-is4"/>
                         <outletCollection property="positionForm" destination="poH-4a-NJt" collectionClass="NSMutableArray" id="iGo-TP-zmZ"/>
                         <outletCollection property="positionForm" destination="ZML-Ki-2TN" collectionClass="NSMutableArray" id="RzZ-Ka-CUq"/>
                         <outletCollection property="positionForm" destination="vbY-Oo-N74" collectionClass="NSMutableArray" id="5rP-X3-sTP"/>
@@ -265,6 +268,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ijh-1m-IxG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="q9g-tV-hSY">
+                    <connections>
+                        <action selector="addPlayerImage:" destination="BKT-kM-wHQ" id="KBW-DF-2hW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3408.8000000000002" y="915.29235382308855"/>
         </scene>

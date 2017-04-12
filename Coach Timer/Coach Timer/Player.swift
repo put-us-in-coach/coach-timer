@@ -11,15 +11,19 @@ import UIKit
 class Player {
     
     let name: String
-    let photo: UIImage?
+    let photo: UIImage
     var isPresent = false
     var currentPlayTime = 0.0
     var totalPlayTime = 0.0
     var totalGameTime = 0.0
     var notes: String
     var positions: [String: Bool] = ["Goalie": false, "Defense": false, "Midfield": false, "Center": false]
+    var onField = false
+    var timerStart: Double?
+    var timerStop: Double?
+    var timePlayed = 0.0
     
-    init(name: String, photo: UIImage? = nil, notes: String = "",
+    init(name: String, photo: UIImage, notes: String = "",
          positions: [String: Bool] ) {
         self.name = name
         self.photo = photo
