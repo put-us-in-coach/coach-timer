@@ -11,7 +11,7 @@ import UIKit
 class Player {
     
     let name: String
-    let photo: UIImage?
+    let photo: UIImage
     var isPresent = false
     var currentPlayTime = 0.0
     var totalPlayTime = 0.0
@@ -23,7 +23,7 @@ class Player {
     var timerStop: Double?
     var timePlayed = 0.0
     
-    init(name: String, photo: UIImage? = nil, notes: String = "",
+    init(name: String, photo: UIImage, notes: String = "",
          positions: [String: Bool] ) {
         self.name = name
         self.photo = photo
