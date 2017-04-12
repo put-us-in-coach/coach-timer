@@ -18,6 +18,10 @@ class Player {
     var totalGameTime = 0.0
     var notes: String
     var positions: [String: Bool] = ["Goalie": false, "Defense": false, "Midfield": false, "Center": false]
+    var onField = false
+    var timerStart: Double?
+    var timerStop: Double?
+    var timePlayed = 0.0
     
     init(name: String, photo: UIImage? = nil, notes: String = "",
          positions: [String: Bool] ) {
