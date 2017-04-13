@@ -100,16 +100,16 @@
 		992AC4A41E9BF0FF00073329 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				992AC4951E9BF0BA00073329 /* Main.storyboard */,
 				99A6DBAC1E9E947300B6F63C /* TimerViewController.swift */,
 				992AC4981E9BF0BA00073329 /* Assets.xcassets */,
-				992AC49A1E9BF0BA00073329 /* LaunchScreen.storyboard */,
-				992AC4951E9BF0BA00073329 /* Main.storyboard */,
 				99E4EDF51E9EEEE3009BDB8E /* ActivePlayerCollectionCell.swift */,
 				99E4EDF61E9EEEE3009BDB8E /* ActivePlayerCollectionCell.xib */,
 				C0C36A9C1E9C32E50085DD43 /* PlayerTableCell.swift */,
 				C0C36A9D1E9C32E50085DD43 /* PlayerTableCell.xib */,
 				992AC4AD1E9BF7EA00073329 /* TeamTableViewCell.swift */,
 				992AC4AE1E9BF7EA00073329 /* TeamTableViewCell.xib */,
+				992AC49A1E9BF0BA00073329 /* LaunchScreen.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -164,7 +164,7 @@
 				TargetAttributes = {
 					992AC48D1E9BF0BA00073329 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = AVQ9E7DJWL;
+						DevelopmentTeam = ET5G9C3LZM;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -341,8 +341,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AVQ9E7DJWL;
+				DEVELOPMENT_TEAM = ET5G9C3LZM;
 				INFOPLIST_FILE = "Coach Timer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.putUsInCoach.Coach-Timer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,8 +355,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AVQ9E7DJWL;
+				DEVELOPMENT_TEAM = ET5G9C3LZM;
 				INFOPLIST_FILE = "Coach Timer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.putUsInCoach.Coach-Timer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
