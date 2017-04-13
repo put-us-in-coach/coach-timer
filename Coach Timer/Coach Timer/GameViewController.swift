@@ -133,10 +133,11 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if collectionView == rosterCollectionView {
-            print("In the bench")
+            print("On the bench")
             guard let selectedIndex = self.rosterCollectionView.indexPathsForSelectedItems?.first else { return }
             
-            selectedPlayer = activeRoster[selectedIndex.row]
+            selectedPlayer = activeRoster.remove(at: selectedIndex.row)
+            collectionView.reloadData()
             print("\(selectedPlayer?.name)")
             
         }
@@ -145,16 +146,18 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             print("On the field")
             guard let selectedIndex = self.fieldCollectionView.indexPathsForSelectedItems?.first else { return }
             guard let player = playersOnField[selectedIndex.row] else {
-//                if selectedPlayer != nil {
-                    playersOnField[selectedIndex.row] = selectedPlayer
-                    fieldCollectionView.reloadData()
-                    selectedPlayer = nil
-//                }
+                playersOnField[selectedIndex.row] = selectedPlayer
+                fieldCollectionView.reloadData()
+                selectedPlayer = nil
                 return
             }
-            
             selectedPlayer = player
+            playersOnField[selectedIndex.row] = nil
+            activeRoster.append(selectedPlayer!)
+            collectionView.reloadData()
+            rosterCollectionView.reloadData()
             print("\(String(describing: selectedPlayer?.name))")
+            selectedPlayer = nil
 
         }
     }
