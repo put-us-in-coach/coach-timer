@@ -35,6 +35,7 @@ class GameViewController: UIViewController {
         self.fieldCollectionView.dataSource = self
         self.rosterCollectionView.delegate = self
         self.rosterCollectionView.dataSource = self
+        self.navigationController?.isNavigationBarHidden = true
         
         let playaNib = UINib(nibName: "ActivePlayerCollectionCell", bundle: nil)
         self.fieldCollectionView.register(playaNib, forCellWithReuseIdentifier: "ActivePlayerCollectionCell")
@@ -94,7 +95,7 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         if collectionView == self.fieldCollectionView {
-            cellCount = 30
+            cellCount = 25
         }
         
         return cellCount
