@@ -10,6 +10,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    
     var seconds = 0
     var minutes = 0
     var game = Game()
@@ -17,6 +18,9 @@ class GameViewController: UIViewController {
     var resumeTapped = false
     
     var timer = Timer()
+    
+    var activePlayer = [Player]()
+    var activeRoster = Team.shared.activeRoster
     
     @IBOutlet weak var timerLabel: UILabel!
     
@@ -72,16 +76,29 @@ class GameViewController: UIViewController {
 
 extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Team.shared.activeRoster.count
+        if collectionView == rosterCollectionView {
+            return activeRoster.count
+        }
+        return activePlayer.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivePlayerCollectionCell", for: indexPath) as! ActivePlayerCollectionCell
         
-        cell.imageView.image = Team.shared.activeRoster[indexPath.row].photo
-        
+        if collectionView == rosterCollectionView {
+            cell.imageView.image = activeRoster[indexPath.row].photo
+            cell.nameLabel.text = activeRoster[indexPath.row].name
+        }
+
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Did select")
+//        let alert = UIAlertController(title: "didSelect", message: "", preferredStyle: .alert)
+//        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+//        alert.addAction(action)
+//        self.present(alert, animated: true, completion: nil)
     }
     
 }
