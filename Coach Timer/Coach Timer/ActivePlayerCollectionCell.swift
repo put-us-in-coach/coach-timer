@@ -9,6 +9,8 @@
 import UIKit
 
 class ActivePlayerCollectionCell: UICollectionViewCell {
+    
+    var activePlayer: Player!
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!

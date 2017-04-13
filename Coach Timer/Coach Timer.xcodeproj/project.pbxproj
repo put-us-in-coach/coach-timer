@@ -164,7 +164,7 @@
 				TargetAttributes = {
 					992AC48D1E9BF0BA00073329 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = AVQ9E7DJWL;
+						DevelopmentTeam = P42QZ5498J;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -341,8 +341,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AVQ9E7DJWL;
+				DEVELOPMENT_TEAM = P42QZ5498J;
 				INFOPLIST_FILE = "Coach Timer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.putUsInCoach.Coach-Timer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,8 +355,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AVQ9E7DJWL;
+				DEVELOPMENT_TEAM = P42QZ5498J;
 				INFOPLIST_FILE = "Coach Timer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.putUsInCoach.Coach-Timer";
 				PRODUCT_NAME = "$(TARGET_NAME)";

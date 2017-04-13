@@ -21,29 +21,30 @@ class GameViewController: UIViewController {
     
     var activePlayer = [Player]()
     var activeRoster = Team.shared.activeRoster
+    var selectedPlayer: Player?
     
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var rosterCollectionView: UICollectionView!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var fieldCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Not Crashing")
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
+        self.fieldCollectionView.delegate = self
+        self.fieldCollectionView.dataSource = self
         self.rosterCollectionView.delegate = self
         self.rosterCollectionView.dataSource = self
         
         let playaNib = UINib(nibName: "ActivePlayerCollectionCell", bundle: nil)
-        self.collectionView.register(playaNib, forCellWithReuseIdentifier: "ActivePlayerCollectionCell")
+        self.fieldCollectionView.register(playaNib, forCellWithReuseIdentifier: "ActivePlayerCollectionCell")
         self.rosterCollectionView.register(playaNib, forCellWithReuseIdentifier: "ActivePlayerCollectionCell")
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        collectionView.reloadData()
+        fieldCollectionView.reloadData()
     }
     
     @IBAction func stopWatch(_ sender: Any) {
@@ -85,29 +86,52 @@ class RosterButtonView: UICollectionReusableView {
 
 extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        var cellCount = 0
+        
         if collectionView == rosterCollectionView {
-            return activeRoster.count
+            cellCount = activeRoster.count
         }
-        return activePlayer.count
+        
+        if collectionView == self.fieldCollectionView {
+            cellCount = 30
+        }
+        
+        return cellCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivePlayerCollectionCell", for: indexPath) as! ActivePlayerCollectionCell
         
+        
+        
         if collectionView == rosterCollectionView {
+            cell.activePlayer = activeRoster[indexPath.row]
             cell.imageView.image = activeRoster[indexPath.row].photo
             cell.nameLabel.text = activeRoster[indexPath.row].name
+        } else {
+            
         }
 
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Did select")
-//        let alert = UIAlertController(title: "didSelect", message: "", preferredStyle: .alert)
-//        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//        alert.addAction(action)
-//        self.present(alert, animated: true, completion: nil)
+        
+        if collectionView == rosterCollectionView {
+            print("In the bench")
+            guard let selectedIndex = self.rosterCollectionView.indexPathsForSelectedItems?.first else { return }
+            
+            selectedPlayer = activeRoster[selectedIndex.row]
+            print("\(selectedPlayer?.name)")
+            
+        }
+        
+        if collectionView == self.fieldCollectionView {
+            
+            print("On the field")
+        }
+        
     }
     
 }
