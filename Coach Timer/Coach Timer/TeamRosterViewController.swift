@@ -19,8 +19,8 @@ class TeamRosterViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
       
-        let playerNib = UINib(nibName: "PlayerViewCell", bundle: nil)
-        self.tableView.register(playerNib, forCellReuseIdentifier: "PlayerViewCell")
+        let playerNib = UINib(nibName: "PlayerTableCell", bundle: nil)
+        self.tableView.register(playerNib, forCellReuseIdentifier: "PlayerTableCell")
         
         self.tableView.estimatedRowHeight = 64
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -39,7 +39,7 @@ extension TeamRosterViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerViewCell", for: indexPath) as! PlayerViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerTableCell", for: indexPath) as! PlayerTableCell
         
         cell.player = Team.shared.activeRoster[indexPath.row]
         

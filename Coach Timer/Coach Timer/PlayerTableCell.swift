@@ -1,5 +1,5 @@
 //
-//  PlayerViewCell.swift
+//  PlayerTableCell.swift
 //  Coach Timer
 //
 //  Created by Sergelenbaatar Tsogtbaatar on 4/10/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayerViewCell: UITableViewCell {
+class PlayerTableCell: UITableViewCell {
 
     
     var player: Player! {
