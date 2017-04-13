@@ -154,7 +154,7 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
             
             selectedPlayer = player
-            print("\(selectedPlayer?.name)")
+            print("\(String(describing: selectedPlayer?.name))")
 
         }
     }
@@ -166,14 +166,10 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         case UICollectionElementKindSectionHeader:
             
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                             withReuseIdentifier: "BenchCollectionHeaderView",
-                                                                             for: indexPath) as! BenchCollectionHeaderView
-            
-
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,  withReuseIdentifier: "BenchCollectionHeaderView", for: indexPath) as! BenchCollectionHeaderView
+        
             return headerView
         default:
-            //4
             assert(false, "Unexpected element kind")
         }
     }
