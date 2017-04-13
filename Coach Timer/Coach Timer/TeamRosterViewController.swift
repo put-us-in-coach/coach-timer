@@ -32,6 +32,9 @@ class TeamRosterViewController: UIViewController {
         tableView.reloadData()
     }
     
+    @IBAction func gameButtonPressed(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 
 }
 

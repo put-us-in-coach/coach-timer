@@ -20,7 +20,12 @@ class GameViewController: UIViewController {
     var timer = Timer()
     
     var playersOnField = Array<Player?>(repeating: nil, count: 25)
-    var activeRoster = Team.shared.activeRoster
+    var activeRoster = Team.shared.activeRoster {
+        didSet {
+            rosterCollectionView.reloadData()
+
+        }
+    }
     var selectedPlayer: Player?
     
     @IBOutlet weak var timerLabel: UILabel!
@@ -28,6 +33,12 @@ class GameViewController: UIViewController {
     @IBOutlet weak var rosterCollectionView: UICollectionView!
     @IBOutlet weak var fieldCollectionView: UICollectionView!
     
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Not Crashing")
@@ -35,19 +46,19 @@ class GameViewController: UIViewController {
         self.fieldCollectionView.dataSource = self
         self.rosterCollectionView.delegate = self
         self.rosterCollectionView.dataSource = self
-        self.navigationController?.isNavigationBarHidden = true
         
         let playaNib = UINib(nibName: "ActivePlayerCollectionCell", bundle: nil)
         self.fieldCollectionView.register(playaNib, forCellWithReuseIdentifier: "ActivePlayerCollectionCell")
         self.rosterCollectionView.register(playaNib, forCellWithReuseIdentifier: "ActivePlayerCollectionCell")
     }
     
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        fieldCollectionView.reloadData()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("will appear")
+        rosterCollectionView.reloadData()
+        self.navigationController?.isNavigationBarHidden = true
     }
-    
+
     @IBAction func stopWatch(_ sender: Any) {
         startTimer()
     }
@@ -67,6 +78,10 @@ class GameViewController: UIViewController {
         }
     }
     
+    @IBAction func showRosterVCPressed(_ sender: Any) {
+    
+    }
+   
     
     func updateTimer() {
         seconds += 1
@@ -102,7 +117,7 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         var cellCount = 0
         
         if collectionView == rosterCollectionView {
-            cellCount = activeRoster.count
+            cellCount = Team.shared.activeRoster.count
         }
         
         if collectionView == self.fieldCollectionView {
@@ -118,9 +133,9 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         
         if collectionView == rosterCollectionView {
-            cell.activePlayer = activeRoster[indexPath.row]
-            cell.imageView.image = activeRoster[indexPath.row].photo
-            cell.nameLabel.text = activeRoster[indexPath.row].name
+            cell.activePlayer = Team.shared.activeRoster[indexPath.row]
+            cell.imageView.image = Team.shared.activeRoster[indexPath.row].photo
+            cell.nameLabel.text = Team.shared.activeRoster[indexPath.row].name
         } else {
             if collectionView == fieldCollectionView {
                 cell.activePlayer = playersOnField[indexPath.row]
@@ -136,7 +151,7 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             print("On the bench")
             guard let selectedIndex = self.rosterCollectionView.indexPathsForSelectedItems?.first else { return }
             
-            selectedPlayer = activeRoster.remove(at: selectedIndex.row)
+            selectedPlayer = Team.shared.activeRoster.remove(at: selectedIndex.row)
             collectionView.reloadData()
             print("\(selectedPlayer?.name)")
             
@@ -153,7 +168,7 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
             selectedPlayer = player
             playersOnField[selectedIndex.row] = nil
-            activeRoster.append(selectedPlayer!)
+            Team.shared.activeRoster.append(selectedPlayer!)
             collectionView.reloadData()
             rosterCollectionView.reloadData()
             print("\(String(describing: selectedPlayer?.name))")
