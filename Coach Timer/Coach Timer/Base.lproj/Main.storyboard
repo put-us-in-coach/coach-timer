@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="coM-Qm-9D1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="coM-Qm-9D1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -72,7 +72,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PZJ-pq-rY6" id="jOq-5U-mcL">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -100,16 +100,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-GR-kLm">
-                                <rect key="frame" x="16" y="64" width="343" height="513"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-GR-kLm">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PlayerViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerViewCell" id="ZFk-0s-oj2" customClass="PlayerViewCell" customModule="Coach_Timer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZFk-0s-oj2" id="BV2-JH-NT1">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -122,21 +121,31 @@
                                     <navigationItem title="Title" id="3AB-bO-NrD"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7F-gd-5L4">
-                                <rect key="frame" x="164" y="617" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="bH0-5k-Dec" kind="showDetail" action="showViewController:sender:" id="Wbn-Hs-KOm"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piP-ss-A4I">
+                                <rect key="frame" x="313" y="72" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Game"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="I7F-gd-5L4" firstAttribute="centerX" secondItem="c5K-zW-Ec2" secondAttribute="centerX" id="tpR-SZ-GZe"/>
-                            <constraint firstItem="PnK-mV-Zo7" firstAttribute="top" secondItem="I7F-gd-5L4" secondAttribute="bottom" constant="20" id="vIi-1X-RXL"/>
+                            <constraint firstAttribute="trailing" secondItem="pjr-GR-kLm" secondAttribute="trailing" id="0wG-1P-TWa"/>
+                            <constraint firstItem="PnK-mV-Zo7" firstAttribute="top" secondItem="pjr-GR-kLm" secondAttribute="bottom" id="Feh-Co-1SH"/>
+                            <constraint firstItem="pjr-GR-kLm" firstAttribute="leading" secondItem="c5K-zW-Ec2" secondAttribute="leading" id="PLU-qz-12I"/>
+                            <constraint firstItem="pjr-GR-kLm" firstAttribute="top" secondItem="mSm-ax-kkR" secondAttribute="bottom" id="ZtR-xB-CDg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Team Roster" id="R4X-wg-Ipx">
+                        <barButtonItem key="leftBarButtonItem" title="Game" style="plain" id="WD4-Tt-yhw">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="I7F-gd-5L4">
+                                <rect key="frame" x="16" y="7" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Game"/>
+                                <connections>
+                                    <segue destination="bH0-5k-Dec" kind="showDetail" action="showViewController:sender:" id="Wbn-Hs-KOm"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="c0e-gc-6Yx">
                             <connections>
                                 <segue destination="HAJ-ij-SDi" kind="presentation" identifier="AddItem" id="IMA-na-gyi"/>
@@ -390,21 +399,25 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Dx4-bK-hGR" customClass="RosterButtonView">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BenchCollectionHeaderView" id="Dx4-bK-hGR" customClass="BenchCollectionHeaderView" customModule="Coach_Timer" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kr9-cq-Yni">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2QJ-7M-OMe">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="80"/>
-                                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <state key="normal" title="Button"/>
+                                            <state key="normal" title="Button" image="appIcon"/>
+                                            <connections>
+                                                <action selector="segueToRosterTableView:" destination="Dx4-bK-hGR" eventType="touchUpInside" id="tVt-61-JFM"/>
+                                                <segue destination="b16-w7-vcK" kind="show" id="35a-7u-kae"/>
+                                            </connections>
                                         </button>
                                     </subviews>
+                                    <rect key="contentStretch" x="0.14999999999999999" y="0.0" width="1" height="1"/>
                                     <constraints>
-                                        <constraint firstItem="Kr9-cq-Yni" firstAttribute="height" secondItem="Dx4-bK-hGR" secondAttribute="height" id="XtE-ai-NRD"/>
-                                        <constraint firstItem="Kr9-cq-Yni" firstAttribute="width" secondItem="Dx4-bK-hGR" secondAttribute="width" id="gRy-F8-w0a"/>
-                                        <constraint firstItem="Kr9-cq-Yni" firstAttribute="centerX" secondItem="Dx4-bK-hGR" secondAttribute="centerX" id="i9H-1k-LAU"/>
-                                        <constraint firstItem="Kr9-cq-Yni" firstAttribute="centerY" secondItem="Dx4-bK-hGR" secondAttribute="centerY" id="wiS-5N-kfe"/>
+                                        <constraint firstAttribute="bottom" secondItem="2QJ-7M-OMe" secondAttribute="bottom" id="79O-Z3-WcG"/>
+                                        <constraint firstItem="2QJ-7M-OMe" firstAttribute="top" secondItem="Dx4-bK-hGR" secondAttribute="top" id="H8a-KT-mvv"/>
+                                        <constraint firstItem="2QJ-7M-OMe" firstAttribute="leading" secondItem="Dx4-bK-hGR" secondAttribute="leading" id="HFo-g2-Ffr"/>
+                                        <constraint firstAttribute="trailing" secondItem="2QJ-7M-OMe" secondAttribute="trailing" id="vyn-Td-9uO"/>
                                     </constraints>
                                 </collectionReusableView>
                             </collectionView>
@@ -511,8 +524,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="appIcon" width="180" height="240"/>
         <image name="defaultPlayerImage" width="100" height="100"/>
         <image name="fieldBackground" width="146" height="210"/>
         <image name="stopWatch" width="150" height="150"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="35a-7u-kae"/>
+    </inferredMetricsTieBreakers>
 </document>
