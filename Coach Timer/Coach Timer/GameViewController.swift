@@ -96,7 +96,7 @@ class RosterButtonView: UICollectionReusableView {
     
 }
 
-extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         var cellCount = 0
@@ -156,6 +156,25 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             selectedPlayer = player
             print("\(selectedPlayer?.name)")
 
+        }
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        switch kind {
+        
+        case UICollectionElementKindSectionHeader:
+            
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                             withReuseIdentifier: "BenchCollectionHeaderView",
+                                                                             for: indexPath) as! BenchCollectionHeaderView
+            
+
+            return headerView
+        default:
+            //4
+            assert(false, "Unexpected element kind")
         }
     }
         
