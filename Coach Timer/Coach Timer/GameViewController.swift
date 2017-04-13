@@ -19,7 +19,7 @@ class GameViewController: UIViewController {
     
     var timer = Timer()
     
-    var activePlayer = [Player]()
+    var playersOnField = Array<Player?>(repeating: nil, count: 25)
     var activeRoster = Team.shared.activeRoster
     var selectedPlayer: Player?
     
@@ -122,7 +122,9 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.imageView.image = activeRoster[indexPath.row].photo
             cell.nameLabel.text = activeRoster[indexPath.row].name
         } else {
-            
+            if collectionView == fieldCollectionView {
+                cell.activePlayer = playersOnField[indexPath.row]
+            }
         }
 
         return cell
@@ -140,11 +142,22 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         if collectionView == self.fieldCollectionView {
-            
             print("On the field")
+            guard let selectedIndex = self.fieldCollectionView.indexPathsForSelectedItems?.first else { return }
+            guard let player = playersOnField[selectedIndex.row] else {
+//                if selectedPlayer != nil {
+                    playersOnField[selectedIndex.row] = selectedPlayer
+                    fieldCollectionView.reloadData()
+                    selectedPlayer = nil
+//                }
+                return
+            }
+            
+            selectedPlayer = player
+            print("\(selectedPlayer?.name)")
+
         }
-        
     }
-    
+        
 }
 

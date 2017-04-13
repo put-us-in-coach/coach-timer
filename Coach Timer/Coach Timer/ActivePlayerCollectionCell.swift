@@ -10,7 +10,18 @@ import UIKit
 
 class ActivePlayerCollectionCell: UICollectionViewCell {
     
-    var activePlayer: Player!
+    var activePlayer: Player? {
+        didSet {
+            print(activePlayer?.name)
+            self.imageView.image = activePlayer?.photo
+            if activePlayer == nil {
+                self.alpha = 0.1
+            } else {
+                self.alpha = 1.0
+            }
+            
+        }
+    }
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
