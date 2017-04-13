@@ -72,6 +72,15 @@ class GameViewController: UIViewController {
         let s = String(format: "%02d:%02d", Int(minutes%100), Int(seconds%100))
         self.timerLabel.text = "\(s)"
     }
+    
+    
+    @IBAction func returnToRoster(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+
+class RosterButtonView: UICollectionReusableView {
+    
 }
 
 extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSource{
