@@ -59,6 +59,9 @@ class GameViewController: UIViewController {
             isTimerRunning = false
         } else {
             // Resume timer
+            if timerLabel.text == "TIMER" {
+                timerLabel.text = "00:00"
+            }
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
             isTimerRunning = true
         }
@@ -73,6 +76,14 @@ class GameViewController: UIViewController {
         }
         let s = String(format: "%02d:%02d", Int(minutes%100), Int(seconds%100))
         self.timerLabel.text = "\(s)"
+    }
+    
+    @IBAction func longPressTimer(_ sender: UILongPressGestureRecognizer) {
+        timer.invalidate()
+        isTimerRunning = false
+        seconds = 0
+        minutes = 0
+        timerLabel.text = "00:00"
     }
     
     

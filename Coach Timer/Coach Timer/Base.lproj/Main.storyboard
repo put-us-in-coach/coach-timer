@@ -312,6 +312,7 @@
                                 <state key="normal" title="BUTTON" image="stopWatch"/>
                                 <connections>
                                     <action selector="stopWatch:" destination="bH0-5k-Dec" eventType="touchUpInside" id="adn-l2-fL5"/>
+                                    <outletCollection property="gestureRecognizers" destination="Va6-6t-WrZ" appends="YES" id="jv1-Nn-tmv"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.20000000000000001" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UgI-1f-32n" userLabel="Field Collection View">
@@ -445,6 +446,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gxn-i2-WQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Va6-6t-WrZ">
+                    <connections>
+                        <action selector="longPressTimer:" destination="bH0-5k-Dec" id="2Xq-kJ-VNN"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4156" y="123.68815592203899"/>
         </scene>
