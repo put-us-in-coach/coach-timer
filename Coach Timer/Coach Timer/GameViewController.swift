@@ -136,12 +136,14 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! ActivePlayerCollectionCell
+        
         if collectionView == rosterCollectionView {
             print("On the bench")
             guard let selectedIndex = self.rosterCollectionView.indexPathsForSelectedItems?.first else { return }
-            
+            selectedCell.imageView.layer.borderWidth = 3.0
             selectedPlayer = Team.shared.activeRoster.remove(at: selectedIndex.row)
-            collectionView.reloadData()
+//            collectionView.reloadData()
         }
         
         if collectionView == self.fieldCollectionView {
@@ -152,6 +154,7 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 selectedPlayer?.currentPlayTime = selectedPlayer?.currentPlayTime == nil ? seconds : (selectedPlayer?.currentPlayTime)!
                 playersOnField[selectedIndex.row] = selectedPlayer
                 fieldCollectionView.reloadData()
+                rosterCollectionView.reloadData()
                 selectedPlayer = nil
                 return
             }
