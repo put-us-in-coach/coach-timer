@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -155,13 +156,6 @@
                                     <outletCollection property="gestureRecognizers" destination="q9g-tV-hSY" appends="YES" id="veX-Ey-KWZ"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llu-dq-QvH">
-                                <rect key="frame" x="21" y="92" width="56" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySw-ru-B85">
                                 <rect key="frame" x="21" y="353" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -169,9 +163,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="NAME" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c1X-Em-QJd">
-                                <rect key="frame" x="85" y="87" width="279" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c1X-Em-QJd">
+                                <rect key="frame" x="16" y="72" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -263,11 +256,14 @@
                         <constraints>
                             <constraint firstItem="hrb-AB-tFH" firstAttribute="top" secondItem="DlF-mb-U5G" secondAttribute="bottom" constant="8" id="1ZW-Ux-5oz"/>
                             <constraint firstItem="O6I-h2-U4R" firstAttribute="top" secondItem="DlF-mb-U5G" secondAttribute="bottom" id="Jak-K4-mHK"/>
+                            <constraint firstItem="c1X-Em-QJd" firstAttribute="top" secondItem="O6I-h2-U4R" secondAttribute="bottom" constant="8" id="OEm-9l-wGU"/>
                             <constraint firstItem="O6I-h2-U4R" firstAttribute="leading" secondItem="Gwt-mB-rij" secondAttribute="leading" id="Pfw-oc-x0Z"/>
                             <constraint firstAttribute="trailing" secondItem="hrb-AB-tFH" secondAttribute="trailing" constant="8" id="lHQ-4s-aCh"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="c1X-Em-QJd" secondAttribute="leading" id="lef-u3-atV"/>
                             <constraint firstAttribute="trailing" secondItem="O6I-h2-U4R" secondAttribute="trailing" id="nRg-KT-xKr"/>
                             <constraint firstItem="fZU-CI-CVq" firstAttribute="leading" secondItem="Gwt-mB-rij" secondAttribute="leading" constant="8" id="r1m-Ud-PmC"/>
                             <constraint firstItem="fZU-CI-CVq" firstAttribute="top" secondItem="DlF-mb-U5G" secondAttribute="bottom" constant="8" id="v1T-dB-3RG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c1X-Em-QJd" secondAttribute="trailing" id="wA4-A8-gOa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Player" id="1pL-9c-5f2">
@@ -292,7 +288,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="5012" y="89"/>
+            <point key="canvasLocation" x="5012" y="88.605697151424295"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="Vdi-dv-lq9">
