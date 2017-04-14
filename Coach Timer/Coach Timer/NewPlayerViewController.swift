@@ -20,6 +20,8 @@ class NewPlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        notesTextView.layer.cornerRadius = 5
+        notesTextView.clipsToBounds = true
         playerImageView.layer.cornerRadius = self.playerImageView.frame.size.width / 2;
         playerImageView.clipsToBounds = true
     }
