@@ -148,7 +148,7 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
             print("On the bench")
             guard let selectedIndex = self.rosterCollectionView.indexPathsForSelectedItems?.first else { return }
-            let color = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.2)
+            let color = UIColor(red: 1.0, green: 1.0, blue: 0.3, alpha: 0.4)
             
             selectedCell.imageView.layer.borderColor = color.cgColor
             selectedCell.imageView.layer.borderWidth = 3.0
