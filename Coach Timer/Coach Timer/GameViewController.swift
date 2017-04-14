@@ -71,7 +71,7 @@ class GameViewController: UIViewController {
             if timerLabel.text == "TIMER" {
                 timerLabel.text = "00:00"
             }
-            self.timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
             isTimerRunning = true
         }
     }
@@ -136,12 +136,17 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! ActivePlayerCollectionCell
+        
         if collectionView == rosterCollectionView {
             print("On the bench")
             guard let selectedIndex = self.rosterCollectionView.indexPathsForSelectedItems?.first else { return }
+            let color = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.2)
+            
+            selectedCell.imageView.layer.borderColor = color.cgColor
+            selectedCell.imageView.layer.borderWidth = 3.0
             
             selectedPlayer = Team.shared.activeRoster.remove(at: selectedIndex.row)
-            collectionView.reloadData()
         }
         
         if collectionView == self.fieldCollectionView {
@@ -152,6 +157,7 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 selectedPlayer?.currentPlayTime = selectedPlayer?.currentPlayTime == nil ? seconds : (selectedPlayer?.currentPlayTime)!
                 playersOnField[selectedIndex.row] = selectedPlayer
                 fieldCollectionView.reloadData()
+                rosterCollectionView.reloadData()
                 selectedPlayer = nil
                 return
             }

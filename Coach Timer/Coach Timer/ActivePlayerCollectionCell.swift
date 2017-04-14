@@ -37,6 +37,7 @@ class ActivePlayerCollectionCell: UICollectionViewCell {
         self.nameLabel.text = nil
         self.timerLabel.text = nil
         self.imageView.image = nil
+        self.imageView.layer.borderWidth = 0.0
     }
 
     override func awakeFromNib() {
