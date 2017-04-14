@@ -23,7 +23,7 @@ class GameViewController: UIViewController {
     var activeRoster = Team.shared.activeRoster {
         didSet {
             rosterCollectionView.reloadData()
-
+            
         }
     }
     var selectedPlayer: Player?
@@ -58,7 +58,7 @@ class GameViewController: UIViewController {
         rosterCollectionView.reloadData()
         self.navigationController?.isNavigationBarHidden = true
     }
-
+    
     @IBAction func stopWatch(_ sender: Any) {
         startTimer()
     }
@@ -79,9 +79,9 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func showRosterVCPressed(_ sender: Any) {
-    
+        
     }
-   
+    
     
     func updateTimer() {
         seconds += 1
@@ -91,6 +91,14 @@ class GameViewController: UIViewController {
         }
         let s = String(format: "%02d:%02d", Int(minutes%100), Int(seconds%100))
         self.timerLabel.text = "\(s)"
+        
+        for eachActivePlayer in playersOnField {
+            if let eachActivePlayer = eachActivePlayer {
+                eachActivePlayer.currentPlayTime += 1
+            }
+        }
+        fieldCollectionView.reloadData()
+
     }
     
     @IBAction func longPressTimer(_ sender: UILongPressGestureRecognizer) {
@@ -134,14 +142,14 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         if collectionView == rosterCollectionView {
             cell.activePlayer = Team.shared.activeRoster[indexPath.row]
-            cell.imageView.image = Team.shared.activeRoster[indexPath.row].photo
-            cell.nameLabel.text = Team.shared.activeRoster[indexPath.row].name
+//            cell.imageView.image = Team.shared.activeRoster[indexPath.row].photo
+//            cell.nameLabel.text = Team.shared.activeRoster[indexPath.row].name
         } else {
             if collectionView == fieldCollectionView {
                 cell.activePlayer = playersOnField[indexPath.row]
             }
         }
-
+        
         return cell
     }
     
@@ -161,6 +169,8 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             print("On the field")
             guard let selectedIndex = self.fieldCollectionView.indexPathsForSelectedItems?.first else { return }
             guard let player = playersOnField[selectedIndex.row] else {
+                
+                selectedPlayer?.currentPlayTime = selectedPlayer?.currentPlayTime == nil ? seconds : (selectedPlayer?.currentPlayTime)!
                 playersOnField[selectedIndex.row] = selectedPlayer
                 fieldCollectionView.reloadData()
                 selectedPlayer = nil
@@ -169,11 +179,12 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             selectedPlayer = player
             playersOnField[selectedIndex.row] = nil
             Team.shared.activeRoster.append(selectedPlayer!)
+    
             collectionView.reloadData()
             rosterCollectionView.reloadData()
             print("\(String(describing: selectedPlayer?.name))")
             selectedPlayer = nil
-
+            
         }
     }
     
@@ -181,16 +192,16 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         switch kind {
-        
+            
         case UICollectionElementKindSectionHeader:
             
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,  withReuseIdentifier: "BenchCollectionHeaderView", for: indexPath) as! BenchCollectionHeaderView
-        
+            
             return headerView
         default:
             assert(false, "Unexpected element kind")
         }
     }
-        
+    
 }
 
