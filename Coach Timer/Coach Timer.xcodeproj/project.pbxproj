@@ -17,7 +17,6 @@
 		992AC4AC1E9BF1E300073329 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992AC4AB1E9BF1E300073329 /* Team.swift */; };
 		992AC4AF1E9BF7EA00073329 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992AC4AD1E9BF7EA00073329 /* TeamTableViewCell.swift */; };
 		992AC4B01E9BF7EA00073329 /* TeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 992AC4AE1E9BF7EA00073329 /* TeamTableViewCell.xib */; };
-		99A6DBAD1E9E947300B6F63C /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A6DBAC1E9E947300B6F63C /* TimerViewController.swift */; };
 		99E4EDF71E9EEEE3009BDB8E /* ActivePlayerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E4EDF51E9EEEE3009BDB8E /* ActivePlayerCollectionCell.swift */; };
 		99E4EDF81E9EEEE3009BDB8E /* ActivePlayerCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E4EDF61E9EEEE3009BDB8E /* ActivePlayerCollectionCell.xib */; };
 		C052DE951E9DD713003E65AC /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C052DE941E9DD713003E65AC /* GameViewController.swift */; };
@@ -40,7 +39,6 @@
 		992AC4AB1E9BF1E300073329 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		992AC4AD1E9BF7EA00073329 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		992AC4AE1E9BF7EA00073329 /* TeamTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamTableViewCell.xib; sourceTree = "<group>"; };
-		99A6DBAC1E9E947300B6F63C /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		99E4EDF51E9EEEE3009BDB8E /* ActivePlayerCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivePlayerCollectionCell.swift; sourceTree = "<group>"; };
 		99E4EDF61E9EEEE3009BDB8E /* ActivePlayerCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivePlayerCollectionCell.xib; sourceTree = "<group>"; };
 		C052DE941E9DD713003E65AC /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 			children = (
 				992AC4951E9BF0BA00073329 /* Main.storyboard */,
 				C052DEA61E9F48B2003E65AC /* BenchCollectionHeaderView.swift */,
-				99A6DBAC1E9E947300B6F63C /* TimerViewController.swift */,
 				992AC4981E9BF0BA00073329 /* Assets.xcassets */,
 				99E4EDF51E9EEEE3009BDB8E /* ActivePlayerCollectionCell.swift */,
 				99E4EDF61E9EEEE3009BDB8E /* ActivePlayerCollectionCell.xib */,
@@ -220,7 +217,6 @@
 				C0C36AA11E9C44EA0085DD43 /* TeamRosterViewController.swift in Sources */,
 				99E4EDF71E9EEEE3009BDB8E /* ActivePlayerCollectionCell.swift in Sources */,
 				622CA4C01E9C59870081C011 /* NewPlayerViewController.swift in Sources */,
-				99A6DBAD1E9E947300B6F63C /* TimerViewController.swift in Sources */,
 				C052DEA71E9F48B2003E65AC /* BenchCollectionHeaderView.swift in Sources */,
 				C0C36A9E1E9C32E60085DD43 /* PlayerTableCell.swift in Sources */,
 			);

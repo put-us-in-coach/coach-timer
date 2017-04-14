@@ -10,7 +10,6 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    
     var seconds = 0
     var minutes = 0
     var game = Game()
@@ -29,16 +28,16 @@ class GameViewController: UIViewController {
     var selectedPlayer: Player?
     
     @IBOutlet weak var timerLabel: UILabel!
-    
     @IBOutlet weak var rosterCollectionView: UICollectionView!
     @IBOutlet weak var fieldCollectionView: UICollectionView!
     
     
+    // For showing nav bar in the next view controller
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Not Crashing")
@@ -54,7 +53,6 @@ class GameViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("will appear")
         rosterCollectionView.reloadData()
         self.navigationController?.isNavigationBarHidden = true
     }
@@ -78,11 +76,6 @@ class GameViewController: UIViewController {
         }
     }
     
-    @IBAction func showRosterVCPressed(_ sender: Any) {
-        
-    }
-    
-    
     func updateTimer() {
         seconds += 1
         if seconds > 59 {
@@ -98,7 +91,7 @@ class GameViewController: UIViewController {
             }
         }
         fieldCollectionView.reloadData()
-
+        
     }
     
     @IBAction func longPressTimer(_ sender: UILongPressGestureRecognizer) {
@@ -108,15 +101,6 @@ class GameViewController: UIViewController {
         minutes = 0
         timerLabel.text = "00:00"
     }
-    
-    
-    @IBAction func returnToRoster(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-}
-
-class RosterButtonView: UICollectionReusableView {
-    
 }
 
 extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -138,12 +122,9 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivePlayerCollectionCell", for: indexPath) as! ActivePlayerCollectionCell
         
-        
-        
+        // If selected on roster collection view
         if collectionView == rosterCollectionView {
             cell.activePlayer = Team.shared.activeRoster[indexPath.row]
-//            cell.imageView.image = Team.shared.activeRoster[indexPath.row].photo
-//            cell.nameLabel.text = Team.shared.activeRoster[indexPath.row].name
         } else {
             if collectionView == fieldCollectionView {
                 cell.activePlayer = playersOnField[indexPath.row]
@@ -161,8 +142,6 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
             selectedPlayer = Team.shared.activeRoster.remove(at: selectedIndex.row)
             collectionView.reloadData()
-            print("\(selectedPlayer?.name)")
-            
         }
         
         if collectionView == self.fieldCollectionView {
@@ -179,7 +158,7 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             selectedPlayer = player
             playersOnField[selectedIndex.row] = nil
             Team.shared.activeRoster.append(selectedPlayer!)
-    
+            
             collectionView.reloadData()
             rosterCollectionView.reloadData()
             print("\(String(describing: selectedPlayer?.name))")
