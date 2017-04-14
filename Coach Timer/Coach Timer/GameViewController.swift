@@ -62,6 +62,10 @@ class GameViewController: UIViewController {
     }
     
     func startTimer() {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.prepare()
+        generator.impactOccurred()
+        
         if isTimerRunning {
             // Pause timer
             timer.invalidate()
@@ -135,10 +139,13 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.prepare()
         
         let selectedCell = collectionView.cellForItem(at: indexPath) as! ActivePlayerCollectionCell
         
         if collectionView == rosterCollectionView {
+            
             print("On the bench")
             guard let selectedIndex = self.rosterCollectionView.indexPathsForSelectedItems?.first else { return }
             let color = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.2)
@@ -147,6 +154,8 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             selectedCell.imageView.layer.borderWidth = 3.0
             
             selectedPlayer = Team.shared.activeRoster.remove(at: selectedIndex.row)
+            
+            generator.impactOccurred()
         }
         
         if collectionView == self.fieldCollectionView {
@@ -170,6 +179,7 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             print("\(String(describing: selectedPlayer?.name))")
             selectedPlayer = nil
             
+            generator.impactOccurred()
         }
     }
     

@@ -11,11 +11,13 @@ import UIKit
 class TeamRosterViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-
+    
+    let generator = UIImpactFeedbackGenerator(style: .heavy)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.isEditing = true
@@ -52,8 +54,10 @@ extension TeamRosterViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+                generator.impactOccurred()
         
-       
+//        let feedback = UISelectionFeedbackGenerator()
+//        feedback.selectionChanged()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
