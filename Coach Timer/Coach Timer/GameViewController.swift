@@ -141,7 +141,12 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if collectionView == rosterCollectionView {
             print("On the bench")
             guard let selectedIndex = self.rosterCollectionView.indexPathsForSelectedItems?.first else { return }
+            var color = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.2)
+            
+            selectedCell.imageView.layer.borderColor = color.cgColor
+//            selectedCell.imageView.layer.borderColor?.alpha = 0.2
             selectedCell.imageView.layer.borderWidth = 3.0
+            
             selectedPlayer = Team.shared.activeRoster.remove(at: selectedIndex.row)
 //            collectionView.reloadData()
         }
