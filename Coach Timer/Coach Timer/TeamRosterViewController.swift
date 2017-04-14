@@ -18,7 +18,8 @@ class TeamRosterViewController: UIViewController {
 
         self.tableView.dataSource = self
         self.tableView.delegate = self
-      
+        self.tableView.isEditing = true
+        
         let playerNib = UINib(nibName: "PlayerTableCell", bundle: nil)
         self.tableView.register(playerNib, forCellReuseIdentifier: "PlayerTableCell")
         
@@ -60,5 +61,21 @@ extension TeamRosterViewController: UITableViewDelegate, UITableViewDataSource {
         return Team.shared.activeRoster.count
     }
     
+    
+     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .none
+    }
+    
+     func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = Team.shared.activeRoster[sourceIndexPath.row]
+        Team.shared.activeRoster.remove(at: sourceIndexPath.row)
+        Team.shared.activeRoster.insert(movedObject, at: destinationIndexPath.row)
+        NSLog("%@", "\(sourceIndexPath.row) => \(destinationIndexPath.row) \(Team.shared.activeRoster)")
+        // To check for correctness enable: self.tableView.reloadData()
+    }
     
 }
