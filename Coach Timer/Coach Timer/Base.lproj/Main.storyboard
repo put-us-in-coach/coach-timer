@@ -101,18 +101,24 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-GR-kLm">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fieldLine" translatesAutoresizingMaskIntoConstraints="NO" id="U5w-lc-xdN">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-GR-kLm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="pjr-GR-kLm" secondAttribute="trailing" id="0wG-1P-TWa"/>
-                            <constraint firstItem="pjr-GR-kLm" firstAttribute="leading" secondItem="c5K-zW-Ec2" secondAttribute="leading" id="PLU-qz-12I"/>
-                            <constraint firstItem="pjr-GR-kLm" firstAttribute="height" secondItem="c5K-zW-Ec2" secondAttribute="height" id="QYy-I4-GZJ"/>
-                            <constraint firstItem="pjr-GR-kLm" firstAttribute="centerY" secondItem="c5K-zW-Ec2" secondAttribute="centerY" id="ZX4-8P-Miy"/>
-                            <constraint firstItem="pjr-GR-kLm" firstAttribute="centerX" secondItem="c5K-zW-Ec2" secondAttribute="centerX" id="ejw-GI-eg3"/>
+                            <constraint firstAttribute="trailing" secondItem="pjr-GR-kLm" secondAttribute="trailing" id="CYZ-NS-blT"/>
+                            <constraint firstItem="U5w-lc-xdN" firstAttribute="centerX" secondItem="c5K-zW-Ec2" secondAttribute="centerX" id="Gzs-hz-Kfx"/>
+                            <constraint firstItem="pjr-GR-kLm" firstAttribute="top" secondItem="mSm-ax-kkR" secondAttribute="bottom" id="L5h-U8-bM7"/>
+                            <constraint firstItem="U5w-lc-xdN" firstAttribute="width" secondItem="c5K-zW-Ec2" secondAttribute="width" id="U8l-gj-z1A"/>
+                            <constraint firstItem="U5w-lc-xdN" firstAttribute="centerY" secondItem="c5K-zW-Ec2" secondAttribute="centerY" id="UZn-sU-ZbF"/>
+                            <constraint firstItem="U5w-lc-xdN" firstAttribute="height" secondItem="c5K-zW-Ec2" secondAttribute="height" id="a7h-pf-dBw"/>
+                            <constraint firstItem="PnK-mV-Zo7" firstAttribute="top" secondItem="pjr-GR-kLm" secondAttribute="bottom" id="d9y-vM-VAW"/>
+                            <constraint firstItem="pjr-GR-kLm" firstAttribute="leading" secondItem="c5K-zW-Ec2" secondAttribute="leading" id="gaF-H7-qmI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Team Roster" id="R4X-wg-Ipx">
@@ -134,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hel-QT-c2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4191" y="89"/>
+            <point key="canvasLocation" x="4189.6000000000004" y="88.605697151424295"/>
         </scene>
         <!--New Player-->
         <scene sceneID="glM-54-vOb">
@@ -469,6 +475,7 @@
     <resources>
         <image name="defaultPlayerImage" width="100" height="100"/>
         <image name="fieldBackground" width="146" height="210"/>
+        <image name="fieldLine" width="1015" height="719"/>
         <image name="segueIcon" width="66" height="66"/>
         <image name="stopWatch" width="150" height="150"/>
     </resources>
