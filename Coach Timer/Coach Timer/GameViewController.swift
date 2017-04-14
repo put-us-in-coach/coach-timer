@@ -73,7 +73,7 @@ class GameViewController: UIViewController {
             if timerLabel.text == "TIMER" {
                 timerLabel.text = "00:00"
             }
-            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
             isTimerRunning = true
         }
     }
@@ -85,7 +85,7 @@ class GameViewController: UIViewController {
     
     func updateTimer() {
         seconds += 1
-        if seconds > 60 {
+        if seconds > 59 {
             minutes += 1
             seconds = 0
         }

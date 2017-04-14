@@ -9,18 +9,17 @@
 import UIKit
 
 class ActivePlayerCollectionCell: UICollectionViewCell {
-    
     var activePlayer: Player? {
         didSet {
             self.imageView.image = activePlayer?.photo
             self.nameLabel.text = activePlayer?.name
-            var minutes = 0
             guard var seconds = (activePlayer?.currentPlayTime) else { return }
-            if seconds > 60 {
-                minutes += 1
-                seconds = 0
-            }
-            let s = String(format: "%02d:%02d", Int(minutes%100), Int(seconds%100))
+            
+//            if seconds > 59 {
+////                minutes += 1
+//                seconds = 0
+//            }
+            let s = String(format: "%02d:%02d", Int(seconds/60%100), Int(seconds%60))
             self.timerLabel.text = "\(s)"
             self.timerLabel.isHidden = false
             if activePlayer == nil {
