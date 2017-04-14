@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xea-da-uyk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xea-da-uyk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -72,7 +72,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PZJ-pq-rY6" id="jOq-5U-mcL">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -108,9 +108,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="pjr-GR-kLm" secondAttribute="trailing" id="0wG-1P-TWa"/>
-                            <constraint firstItem="PnK-mV-Zo7" firstAttribute="top" secondItem="pjr-GR-kLm" secondAttribute="bottom" id="Feh-Co-1SH"/>
                             <constraint firstItem="pjr-GR-kLm" firstAttribute="leading" secondItem="c5K-zW-Ec2" secondAttribute="leading" id="PLU-qz-12I"/>
-                            <constraint firstItem="pjr-GR-kLm" firstAttribute="top" secondItem="mSm-ax-kkR" secondAttribute="bottom" id="ZtR-xB-CDg"/>
+                            <constraint firstItem="pjr-GR-kLm" firstAttribute="height" secondItem="c5K-zW-Ec2" secondAttribute="height" id="QYy-I4-GZJ"/>
+                            <constraint firstItem="pjr-GR-kLm" firstAttribute="centerY" secondItem="c5K-zW-Ec2" secondAttribute="centerY" id="ZX4-8P-Miy"/>
+                            <constraint firstItem="pjr-GR-kLm" firstAttribute="centerX" secondItem="c5K-zW-Ec2" secondAttribute="centerX" id="ejw-GI-eg3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Team Roster" id="R4X-wg-Ipx">
