@@ -20,7 +20,8 @@ class NewPlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        playerImageView.layer.cornerRadius = self.playerImageView.frame.size.width / 2;
+        playerImageView.clipsToBounds = true
     }
     
 //MARK: User actons
