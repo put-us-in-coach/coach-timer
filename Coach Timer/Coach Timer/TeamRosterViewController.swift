@@ -22,7 +22,7 @@ class TeamRosterViewController: UIViewController {
         let playerNib = UINib(nibName: "PlayerTableCell", bundle: nil)
         self.tableView.register(playerNib, forCellReuseIdentifier: "PlayerTableCell")
         
-        self.tableView.estimatedRowHeight = 64
+        self.tableView.estimatedRowHeight = 80.5
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
     }

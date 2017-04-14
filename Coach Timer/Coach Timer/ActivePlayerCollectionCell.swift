@@ -18,6 +18,8 @@ class ActivePlayerCollectionCell: UICollectionViewCell {
         didSet {
             self.imageView.image = activePlayer?.photo
             self.nameLabel.text = activePlayer?.name
+            self.imageView.layer.cornerRadius = self.bounds.width/2
+            self.imageView.layer.masksToBounds = true
             guard var seconds = (activePlayer?.currentPlayTime) else { return }
             let s = String(format: "%02d:%02d", Int(seconds/60%100), Int(seconds%60))
             self.timerLabel.text = "\(s)"
