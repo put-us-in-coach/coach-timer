@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F54b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xea-da-uyk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xea-da-uyk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -76,6 +76,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fieldLine" translatesAutoresizingMaskIntoConstraints="NO" id="TR6-B6-Pa8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySw-ru-B85">
                                 <rect key="frame" x="21" y="353" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -186,8 +189,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hrb-AB-tFH" firstAttribute="top" secondItem="DlF-mb-U5G" secondAttribute="bottom" constant="8" id="1ZW-Ux-5oz"/>
+                            <constraint firstItem="TR6-B6-Pa8" firstAttribute="centerX" secondItem="Gwt-mB-rij" secondAttribute="centerX" id="37H-3P-a6e"/>
+                            <constraint firstItem="TR6-B6-Pa8" firstAttribute="height" secondItem="Gwt-mB-rij" secondAttribute="height" id="9yQ-nw-Px7"/>
                             <constraint firstItem="O6I-h2-U4R" firstAttribute="top" secondItem="DlF-mb-U5G" secondAttribute="bottom" id="Jak-K4-mHK"/>
                             <constraint firstItem="c1X-Em-QJd" firstAttribute="top" secondItem="O6I-h2-U4R" secondAttribute="bottom" constant="8" id="OEm-9l-wGU"/>
+                            <constraint firstItem="TR6-B6-Pa8" firstAttribute="width" secondItem="Gwt-mB-rij" secondAttribute="width" id="OcH-uc-X6f"/>
                             <constraint firstItem="O6I-h2-U4R" firstAttribute="leading" secondItem="Gwt-mB-rij" secondAttribute="leading" id="Pfw-oc-x0Z"/>
                             <constraint firstItem="M7C-tg-hRj" firstAttribute="centerX" secondItem="Gwt-mB-rij" secondAttribute="centerX" id="RNB-Pa-Gyp"/>
                             <constraint firstItem="M7C-tg-hRj" firstAttribute="top" secondItem="c1X-Em-QJd" secondAttribute="bottom" constant="8" id="cIp-LX-EuA"/>
@@ -195,6 +201,7 @@
                             <constraint firstAttribute="leadingMargin" secondItem="c1X-Em-QJd" secondAttribute="leading" id="lef-u3-atV"/>
                             <constraint firstAttribute="trailing" secondItem="O6I-h2-U4R" secondAttribute="trailing" id="nRg-KT-xKr"/>
                             <constraint firstItem="fZU-CI-CVq" firstAttribute="leading" secondItem="Gwt-mB-rij" secondAttribute="leading" constant="8" id="r1m-Ud-PmC"/>
+                            <constraint firstItem="TR6-B6-Pa8" firstAttribute="centerY" secondItem="Gwt-mB-rij" secondAttribute="centerY" id="sA1-Xz-Joe"/>
                             <constraint firstItem="fZU-CI-CVq" firstAttribute="top" secondItem="DlF-mb-U5G" secondAttribute="bottom" constant="8" id="v1T-dB-3RG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="c1X-Em-QJd" secondAttribute="trailing" id="wA4-A8-gOa"/>
                         </constraints>
@@ -283,9 +290,13 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenVortex" id="uhL-4G-7Aj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="HGn-dV-y6r" customClass="PlayerCell">
-                                        <rect key="frame" x="50" y="5.5" width="69" height="69"/>
+                                        <rect key="frame" x="50" y="6" width="69" height="69"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
@@ -367,7 +378,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xea-da-uyk" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GYu-yv-W2F">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" shadowImage="stopWatch" id="GYu-yv-W2F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -385,6 +396,7 @@
         <image name="defaultPlayerImage" width="100" height="100"/>
         <image name="fieldBackground" width="146" height="210"/>
         <image name="fieldLine" width="1015" height="719"/>
+        <image name="greenVortex" width="1277" height="720"/>
         <image name="segueIcon" width="66" height="66"/>
         <image name="stopWatch" width="150" height="150"/>
     </resources>
