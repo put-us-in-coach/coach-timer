@@ -2,8 +2,7 @@
 
 Coach Timer is an iOS application that helps soccer coaches keep track of their players' game time, and their positions on the field. It was written in Swift 3.1 and uses the core Foundation and UIKit libraries.
 
-This application was built as the mid-term project for [Code 401: Advanced Software Development in iOS](https://www.codefellows.org/courses/code-401/advanced-software-development-in-full-stack-javascript/), April 10-14, 2017.
-
+This application was built April 10-14, 2017 as the mid-term project for [Code 401: Advanced Software Development in iOS](https://www.codefellows.org/courses/code-401/advanced-software-development-in-ios/).
 ## How to use this application
 
 There are three primary views in Coach Timer:
@@ -14,7 +13,7 @@ There are three primary views in Coach Timer:
 
 ### Game
 
-[!Game view image](coach-timer/screenshots/gameview.jpeg)
+![Game view image](screenshots/gameview.jpeg)
 
 **Timer:**
 
@@ -33,7 +32,7 @@ There are three primary views in Coach Timer:
 
 ### Team Roster
 
-[!Roster view image](coach-timer/screenshots/rosterview.jpeg)
+![Roster view image](screenshots/rosterview.jpeg)
 
 1. Tap the Add (+) button to create a new player.
 1. Tap the Game button to return to the game.
@@ -42,7 +41,7 @@ There are three primary views in Coach Timer:
 
 ### Player Creation
 
-[!Player view image](coach-timer/screenshots/playerview.jpeg)
+![Player view image](screenshots/playerview.jpeg)
 
 On this view you can:
 
@@ -69,4 +68,6 @@ Our application icon was resized using [MakeAppIcon](https://makeappicon.com).
 
 Default player image "User" by [Noun Project](https://thenounproject.com).
 
-We'd also like to give special thanks to @cathy810218, one of the TAs for the course.  Her assistance was invaluable in completing this project on time. **Thank you, Cathy!**
+We'd also like to give special thanks to @cathy810218, one of the TAs for the course.  Her assistance was invaluable in completing this project on time.  
+
+**Thank you, Cathy!**
