@@ -51,9 +51,9 @@ On this view you can:
 1. Add notes for the player 
 
 ## Contributors
-@regenalgrant  
-@Sergtsaeb  
-@robert-hatfield  
+[@regenalgrant](https://github.com/regenalgrant)  
+[@Sergtsaeb](https://github.com/Sergtsaeb)  
+[@robert-hatfield](https://github.com/robert-hatfield)  
 
 ## Attribution
 
@@ -68,6 +68,5 @@ Our application icon was resized using [MakeAppIcon](https://makeappicon.com).
 
 Default player image "User" by [Noun Project](https://thenounproject.com).
 
-We'd also like to give special thanks to @cathy810218, one of the TAs for the course.  Her assistance was invaluable in completing this project on time.  
-
+We'd also like to give special thanks to [@cathy810218](https://github.com/cathy810218), one of the TAs for the course.  Her assistance was invaluable in completing this project on time.  
 **Thank you, Cathy!**
