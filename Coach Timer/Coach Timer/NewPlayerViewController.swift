@@ -26,7 +26,7 @@ class NewPlayerViewController: UIViewController {
         playerImageView.clipsToBounds = true
     }
     
-//MARK: User actons
+//MARK: User actions
     
     func createPlayer() -> Player {
         
@@ -57,11 +57,7 @@ class NewPlayerViewController: UIViewController {
         }
         
         let currentPlayer = Player(name: nameField.text!, photo: playerImageView.image!, notes: notesTextView.text, positions: positions)
-        
-        
         Team.shared.activeRoster.append(currentPlayer)
-        print("\(String(describing: Team.shared.activeRoster.last))")
-
         return currentPlayer
     }
     
@@ -76,12 +72,9 @@ class NewPlayerViewController: UIViewController {
     
     
     @IBAction func addPlayerImage(_ sender: Any) {
-        print("Player image tapped")
         self.presentActionSheet()
     }
-    
-
-    
+        
 }
 
 //MARK: Image picker extension

@@ -55,13 +55,9 @@ extension TeamRosterViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                 generator.impactOccurred()
-        
-//        let feedback = UISelectionFeedbackGenerator()
-//        feedback.selectionChanged()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return Team.shared.activeRoster.count
     }
     
