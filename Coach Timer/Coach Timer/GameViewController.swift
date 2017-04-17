@@ -40,7 +40,6 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Not Crashing")
         self.fieldCollectionView.delegate = self
         self.fieldCollectionView.dataSource = self
         self.rosterCollectionView.delegate = self
@@ -146,9 +145,8 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         if collectionView == rosterCollectionView {
             
-            print("On the bench")
             guard let selectedIndex = self.rosterCollectionView.indexPathsForSelectedItems?.first else { return }
-            let color = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.2)
+            let color = UIColor(red: 1.0, green: 1.0, blue: 0.3, alpha: 0.4)
             
             selectedCell.imageView.layer.borderColor = color.cgColor
             selectedCell.imageView.layer.borderWidth = 3.0
@@ -159,7 +157,6 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         if collectionView == self.fieldCollectionView {
-            print("On the field")
             guard let selectedIndex = self.fieldCollectionView.indexPathsForSelectedItems?.first else { return }
             guard let player = playersOnField[selectedIndex.row] else {
                 
@@ -176,7 +173,6 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
             collectionView.reloadData()
             rosterCollectionView.reloadData()
-            print("\(String(describing: selectedPlayer?.name))")
             selectedPlayer = nil
             
             generator.impactOccurred()
