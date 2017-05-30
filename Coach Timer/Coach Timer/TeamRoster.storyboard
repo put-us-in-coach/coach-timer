@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UMB-PP-PGl">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Team Roster-->
+        <scene sceneID="SZm-MJ-Ibc">
+            <objects>
+                <viewController id="UMB-PP-PGl" customClass="TeamRosterViewController" customModule="Coach_Timer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kf4-fu-k0x"/>
+                        <viewControllerLayoutGuide type="bottom" id="r2s-hG-xzu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Gw-dM-YdN">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fieldLine" translatesAutoresizingMaskIntoConstraints="NO" id="1rC-vB-R3K">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                            </imageView>
+                            <tableView opaque="NO" clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tay-um-RNz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tay-um-RNz" firstAttribute="top" secondItem="Kf4-fu-k0x" secondAttribute="bottom" id="6OY-Do-i6V"/>
+                            <constraint firstItem="Tay-um-RNz" firstAttribute="leading" secondItem="1Gw-dM-YdN" secondAttribute="leading" id="KGP-k4-5Fe"/>
+                            <constraint firstItem="1rC-vB-R3K" firstAttribute="height" secondItem="1Gw-dM-YdN" secondAttribute="height" id="MWy-s9-Gl4"/>
+                            <constraint firstAttribute="trailing" secondItem="Tay-um-RNz" secondAttribute="trailing" id="PYG-t9-lya"/>
+                            <constraint firstItem="1rC-vB-R3K" firstAttribute="centerX" secondItem="1Gw-dM-YdN" secondAttribute="centerX" id="Xo2-Sv-97r"/>
+                            <constraint firstItem="r2s-hG-xzu" firstAttribute="top" secondItem="Tay-um-RNz" secondAttribute="bottom" id="i94-Rt-cwH"/>
+                            <constraint firstItem="1rC-vB-R3K" firstAttribute="width" secondItem="1Gw-dM-YdN" secondAttribute="width" id="mMk-X2-BfQ"/>
+                            <constraint firstItem="1rC-vB-R3K" firstAttribute="centerY" secondItem="1Gw-dM-YdN" secondAttribute="centerY" id="ube-oR-qQm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Team Roster" id="bzL-ai-WhU">
+                        <barButtonItem key="leftBarButtonItem" title="Game" id="Wt6-eA-vHu">
+                            <connections>
+                                <action selector="gameButtonPressed:" destination="UMB-PP-PGl" id="4ft-rY-0nD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KXB-Xm-0wn">
+                            <connections>
+                                <segue destination="5w5-KZ-gqa" kind="presentation" id="nEv-ZQ-Lle"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="Tay-um-RNz" id="ZNE-mg-UU7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UW5-an-V48" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4189.6000000000004" y="88.605697151424295"/>
+        </scene>
+        <!--PlayerDetail-->
+        <scene sceneID="uR8-Pk-YoW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PlayerDetail" id="5w5-KZ-gqa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GSa-dW-Ssi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4953" y="88"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fieldLine" width="1015" height="719"/>
+    </resources>
+</document>
