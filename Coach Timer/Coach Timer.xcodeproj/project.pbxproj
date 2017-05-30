@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62265AD71EDE0A6E00715583 /* TeamRoster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62265AD61EDE0A6E00715583 /* TeamRoster.storyboard */; };
+		62265AD91EDE0AAF00715583 /* PlayerDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62265AD81EDE0AAF00715583 /* PlayerDetail.storyboard */; };
 		622CA4C01E9C59870081C011 /* NewPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622CA4BF1E9C59870081C011 /* NewPlayerViewController.swift */; };
 		992AC4921E9BF0BA00073329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992AC4911E9BF0BA00073329 /* AppDelegate.swift */; };
 		992AC4971E9BF0BA00073329 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 992AC4951E9BF0BA00073329 /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62265AD61EDE0A6E00715583 /* TeamRoster.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TeamRoster.storyboard; sourceTree = "<group>"; };
+		62265AD81EDE0AAF00715583 /* PlayerDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayerDetail.storyboard; sourceTree = "<group>"; };
 		622CA4BF1E9C59870081C011 /* NewPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlayerViewController.swift; sourceTree = "<group>"; };
 		992AC48E1E9BF0BA00073329 /* Coach Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coach Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		992AC4911E9BF0BA00073329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				992AC4951E9BF0BA00073329 /* Main.storyboard */,
+				62265AD81EDE0AAF00715583 /* PlayerDetail.storyboard */,
+				62265AD61EDE0A6E00715583 /* TeamRoster.storyboard */,
 				C052DEA61E9F48B2003E65AC /* BenchCollectionHeaderView.swift */,
 				992AC4981E9BF0BA00073329 /* Assets.xcassets */,
 				99E4EDF51E9EEEE3009BDB8E /* ActivePlayerCollectionCell.swift */,
@@ -192,11 +198,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62265AD71EDE0A6E00715583 /* TeamRoster.storyboard in Resources */,
 				992AC4B01E9BF7EA00073329 /* TeamTableViewCell.xib in Resources */,
 				992AC49C1E9BF0BA00073329 /* LaunchScreen.storyboard in Resources */,
 				992AC4991E9BF0BA00073329 /* Assets.xcassets in Resources */,
 				992AC4971E9BF0BA00073329 /* Main.storyboard in Resources */,
 				99E4EDF81E9EEEE3009BDB8E /* ActivePlayerCollectionCell.xib in Resources */,
+				62265AD91EDE0AAF00715583 /* PlayerDetail.storyboard in Resources */,
 				C0C36A9F1E9C32E60085DD43 /* PlayerTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
