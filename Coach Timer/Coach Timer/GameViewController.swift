@@ -26,6 +26,7 @@ class GameViewController: UIViewController {
         }
     }
     var selectedPlayer: Player?
+    var rosterSelection: IndexPath?
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var rosterCollectionView: UICollectionView!
@@ -145,13 +146,22 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         if collectionView == rosterCollectionView {
             
+            if selectedPlayer != nil && rosterSelection != nil {
+                let previousCell = collectionView.cellForItem(at: rosterSelection!) as! ActivePlayerCollectionCell
+                previousCell.imageView.layer.borderColor = nil
+                previousCell.imageView.layer.borderWidth = 0.0
+                selectedPlayer = nil
+                rosterSelection = nil
+            }
+            
             guard let selectedIndex = self.rosterCollectionView.indexPathsForSelectedItems?.first else { return }
             let color = UIColor(red: 1.0, green: 1.0, blue: 0.3, alpha: 0.4)
             
             selectedCell.imageView.layer.borderColor = color.cgColor
             selectedCell.imageView.layer.borderWidth = 3.0
             
-            selectedPlayer = Team.shared.activeRoster.remove(at: selectedIndex.row)
+            rosterSelection = selectedIndex
+            selectedPlayer = Team.shared.activeRoster[(rosterSelection?.first)!]
             
             generator.impactOccurred()
         }
@@ -162,11 +172,15 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 
                 selectedPlayer?.currentPlayTime = selectedPlayer?.currentPlayTime == nil ? seconds : (selectedPlayer?.currentPlayTime)!
                 playersOnField[selectedIndex.row] = selectedPlayer
+                Team.shared.activeRoster.remove(at: (rosterSelection?.first!)!)
                 fieldCollectionView.reloadData()
                 rosterCollectionView.reloadData()
                 selectedPlayer = nil
+                rosterSelection = nil
                 return
             }
+            
+            // TODO: if exchanging players
             selectedPlayer = player
             playersOnField[selectedIndex.row] = nil
             Team.shared.activeRoster.append(selectedPlayer!)
