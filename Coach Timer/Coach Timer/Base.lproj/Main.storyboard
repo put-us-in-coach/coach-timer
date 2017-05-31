@@ -126,6 +126,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="gWG-j7-9az" firstAttribute="top" secondItem="PGE-uj-Bo0" secondAttribute="bottom" constant="-52" id="8PN-dY-ATd"/>
                             <constraint firstAttribute="trailing" secondItem="UgI-1f-32n" secondAttribute="trailing" id="Amb-El-vdZ"/>
@@ -143,6 +144,9 @@
                             <constraint firstItem="gWG-j7-9az" firstAttribute="top" secondItem="qXz-US-tWP" secondAttribute="bottom" constant="20" id="sF3-IV-qJu"/>
                             <constraint firstAttribute="trailing" secondItem="5t2-P2-7HF" secondAttribute="trailing" id="xTU-vz-qXH"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="PV0-tX-PkS" appends="YES" id="ccj-m9-9a7"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Hgv-L0-jGD"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -158,6 +162,11 @@
                         <action selector="longPressTimer:" destination="bH0-5k-Dec" id="2Xq-kJ-VNN"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="PV0-tX-PkS">
+                    <connections>
+                        <action selector="panHandlerWithRecognizer:" destination="bH0-5k-Dec" id="flS-Ww-3Xp"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3383" y="89"/>
         </scene>

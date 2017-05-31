@@ -49,8 +49,8 @@ class GameViewController: UIViewController {
         self.fieldCollectionView.register(playaNib, forCellWithReuseIdentifier: "ActivePlayerCollectionCell")
         self.rosterCollectionView.register(playaNib, forCellWithReuseIdentifier: "ActivePlayerCollectionCell")
         
-        let gesture = UILongPressGestureRecognizer(target: self, action: Selector(("handleGesture")))
-        self.view.addGestureRecognizer(gesture)
+        let panGesture = UIPanGestureRecognizer(target: self, action: Selector(("panHandler")))
+        self.view.addGestureRecognizer(panGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -108,9 +108,13 @@ class GameViewController: UIViewController {
         timerLabel.text = "00:00"
     }
     
-    func handleGesture(gestureRecognizer: UILongPressGestureRecognizer) {
+    @IBAction func panHandler(recognizer: UIPanGestureRecognizer) {
+        let translation = recognizer.translation(in: self.view)
         
-        
+        if let view = recognizer.view {
+            view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y + translation.y)
+        }
+        recognizer.setTranslation(.zero, in: self.view)
     }
 }
 
