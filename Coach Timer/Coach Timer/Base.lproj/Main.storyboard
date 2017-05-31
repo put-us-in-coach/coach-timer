@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xea-da-uyk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xea-da-uyk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -78,7 +78,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenVortex" id="uhL-4G-7Aj">
+                                <imageView key="backgroundView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenVortex" id="uhL-4G-7Aj">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -126,6 +126,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="gWG-j7-9az" firstAttribute="top" secondItem="PGE-uj-Bo0" secondAttribute="bottom" constant="-52" id="8PN-dY-ATd"/>
                             <constraint firstAttribute="trailing" secondItem="UgI-1f-32n" secondAttribute="trailing" id="Amb-El-vdZ"/>
@@ -143,6 +144,9 @@
                             <constraint firstItem="gWG-j7-9az" firstAttribute="top" secondItem="qXz-US-tWP" secondAttribute="bottom" constant="20" id="sF3-IV-qJu"/>
                             <constraint firstAttribute="trailing" secondItem="5t2-P2-7HF" secondAttribute="trailing" id="xTU-vz-qXH"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="PV0-tX-PkS" appends="YES" id="ccj-m9-9a7"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Hgv-L0-jGD"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -158,6 +162,11 @@
                         <action selector="longPressTimer:" destination="bH0-5k-Dec" id="2Xq-kJ-VNN"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="PV0-tX-PkS">
+                    <connections>
+                        <action selector="panHandlerWithRecognizer:" destination="bH0-5k-Dec" id="flS-Ww-3Xp"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3383" y="89"/>
         </scene>
