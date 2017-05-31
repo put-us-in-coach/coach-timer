@@ -148,16 +148,16 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
             if selectedPlayer != nil && rosterSelection != nil {
                 let previousCell = collectionView.cellForItem(at: rosterSelection!) as! ActivePlayerCollectionCell
-                previousCell.imageView.layer.borderColor = nil
-                previousCell.imageView.layer.borderWidth = 0.0
+                previousCell.imageView.layer.borderColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 0.4).cgColor
+                previousCell.imageView.layer.borderWidth = 0.5
                 selectedPlayer = nil
                 rosterSelection = nil
             }
             
             guard let selectedIndex = self.rosterCollectionView.indexPathsForSelectedItems?.first else { return }
-            let color = UIColor(red: 1.0, green: 1.0, blue: 0.3, alpha: 0.4)
+            let highlightColor = UIColor(red: 1.0, green: 1.0, blue: 0.3, alpha: 0.4).cgColor
             
-            selectedCell.imageView.layer.borderColor = color.cgColor
+            selectedCell.imageView.layer.borderColor = highlightColor
             selectedCell.imageView.layer.borderWidth = 3.0
             
             rosterSelection = selectedIndex
@@ -169,6 +169,8 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if collectionView == self.fieldCollectionView {
             guard let selectedIndex = self.fieldCollectionView.indexPathsForSelectedItems?.first else { return }
             guard let player = playersOnField[selectedIndex.row] else {
+                
+                if selectedPlayer == nil { return }
                 
                 selectedPlayer?.currentPlayTime = selectedPlayer?.currentPlayTime == nil ? seconds : (selectedPlayer?.currentPlayTime)!
                 playersOnField[selectedIndex.row] = selectedPlayer
