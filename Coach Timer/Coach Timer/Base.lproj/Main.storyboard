@@ -164,7 +164,7 @@
                 </pongPressGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="PV0-tX-PkS">
                     <connections>
-                        <action selector="panHandlerWithRecognizer:" destination="bH0-5k-Dec" id="flS-Ww-3Xp"/>
+                        <action selector="panHandlerWithRecognizer:" destination="bH0-5k-Dec" id="8wW-FS-Rx1"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>

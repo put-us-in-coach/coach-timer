@@ -49,8 +49,6 @@ class GameViewController: UIViewController {
         self.fieldCollectionView.register(playaNib, forCellWithReuseIdentifier: "ActivePlayerCollectionCell")
         self.rosterCollectionView.register(playaNib, forCellWithReuseIdentifier: "ActivePlayerCollectionCell")
         
-        let panGesture = UIPanGestureRecognizer(target: self, action: Selector(("panHandler")))
-        self.view.addGestureRecognizer(panGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -109,12 +107,23 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func panHandler(recognizer: UIPanGestureRecognizer) {
+        //captures pan gesture distance traveled
         let translation = recognizer.translation(in: self.view)
-        
         if let view = recognizer.view {
             view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y + translation.y)
         }
         recognizer.setTranslation(.zero, in: self.view)
+        
+        //state callbacks
+        if recognizer.state == UIGestureRecognizerState.began {
+            
+            
+        } else if recognizer.state == UIGestureRecognizerState.changed {
+            
+        } else if recognizer.state == UIGestureRecognizerState.ended {
+            let velocity = recognizer.velocity(in: self.view)
+        }
+        
     }
 }
 
