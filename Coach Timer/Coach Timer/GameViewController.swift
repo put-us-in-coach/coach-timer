@@ -105,6 +105,21 @@ class GameViewController: UIViewController {
         minutes = 0
         timerLabel.text = "00:00"
     }
+    
+    func highlightPlayerForCell(_ cell: ActivePlayerCollectionCell, _ flag: Bool) {
+        
+        switch flag {
+        case true:
+            // Add yellow border to image
+            cell.imageView.layer.borderColor = UIColor(red: 1.0, green: 1.0, blue: 0.3, alpha: 0.4).cgColor
+            cell.imageView.layer.borderWidth = 3.0
+        case false:
+            // Restore default image border
+            cell.imageView.layer.borderColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 0.4).cgColor
+            cell.imageView.layer.borderWidth = 0.5
+        }
+
+    }
 }
 
 extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -146,20 +161,21 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         if collectionView == rosterCollectionView {
             
+            // If there is a prior selection, reset border of prior cell, and clear selection
             if selectedPlayer != nil && rosterSelection != nil {
                 let previousCell = collectionView.cellForItem(at: rosterSelection!) as! ActivePlayerCollectionCell
-                previousCell.imageView.layer.borderColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 0.4).cgColor
-                previousCell.imageView.layer.borderWidth = 0.5
+                highlightPlayerForCell(previousCell, false)
+
                 selectedPlayer = nil
                 rosterSelection = nil
             }
             
+            // Highlight selected cell of roster
             guard let selectedIndex = self.rosterCollectionView.indexPathsForSelectedItems?.first else { return }
-            let highlightColor = UIColor(red: 1.0, green: 1.0, blue: 0.3, alpha: 0.4).cgColor
+            highlightPlayerForCell(selectedCell, true)
+
             
-            selectedCell.imageView.layer.borderColor = highlightColor
-            selectedCell.imageView.layer.borderWidth = 3.0
-            
+            // Store selected indexPath & player
             rosterSelection = selectedIndex
             selectedPlayer = Team.shared.activeRoster[(rosterSelection?.first)!]
             
